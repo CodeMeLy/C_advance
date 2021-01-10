@@ -11,6 +11,7 @@ int main(){
     print(first,second);
     // swap(first,second);// gọi hàm hoán vị sử dụng tham chiếu
     swap(&first, &second);// gọi hàm hoán vị sử dụng con trỏ
+    printf("\nafter swap: ");
     print(first,second);
     return 0;
 }
