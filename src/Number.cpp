@@ -57,4 +57,3 @@ float div(const int first, const int second){
 void print(const int first,const int second){
     printf("\n{first number:%d, second number: %d}",first,second);
 }
-// viết xong 1 hàm thì e commit lên nhé: viết hàm = định nghĩa, xây dựng, gọi hàm
