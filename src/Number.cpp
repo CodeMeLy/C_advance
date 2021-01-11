@@ -32,6 +32,8 @@ void enter(int &first, int &second){// truyền vào tham chiếu
     printf("enter second number:");
     scanf("%d",&second);
 }
+
+// ddaya la comment
 void swap(int *first, int *second){
     int temp = *first;// *first: lấy giá trị của con trỏ first
     *first = *second;
