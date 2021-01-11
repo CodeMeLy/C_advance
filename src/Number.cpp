@@ -3,10 +3,10 @@ void enter(int *first, int *second);// su dung con tro de nhap
 void enter(int &first, int &second);
 void swap(int *first, int *second);
 void swap(int &first, int &second);// hoán vị sử dụng truyền vào tham chiếu
-int add(const int first, const int second);//TODO: viết hàm cộng 2 số
-int sub(const int first, const int second);//TODO: viết hàm trừ 2 số
-double mul(const int first, const int second);// TODO: viết hàm nhân 2 số
-float div(const int first, const int second);// TODO: viết hàm chia 2 số
+int add(const int first, const int second);
+int sub(const int first, const int second);
+double mul(const int first, const int second);
+float div(const int first, const int second);
 void print(const int first,const int second);// su dung tham tri de xuat, trong khi xuất thì first và second không thay đổi giá trị nên sử dụng thêm từ khóa const trước
 int main(){
     int first, second;
@@ -44,6 +44,9 @@ void swap(int &first, int &second){
 }
 int add(const int first, const int second){
     return first + second;
+}
+int sub(const int first, const int second){
+    return first - second;
 }
 void print(const int first,const int second){
     printf("\n{first number:%d, second number: %d}",first,second);
