@@ -3,6 +3,10 @@ void enter(int *first, int *second);// su dung con tro de nhap
 void enter(int &first, int &second);
 void swap(int *first, int *second);
 void swap(int &first, int &second);// hoán vị sử dụng truyền vào tham chiếu
+int add(const int first, const int second);//TODO: viết hàm cộng 2 số
+int sub(const int first, const int second);//TODO: viết hàm trừ 2 số
+double mul(const int first, const int second);// TODO: viết hàm nhân 2 số
+float div(const int first, const int second);// TODO: viết hàm chia 2 số
 void print(const int first,const int second);// su dung tham tri de xuat, trong khi xuất thì first và second không thay đổi giá trị nên sử dụng thêm từ khóa const trước
 int main(){
     int first, second;
@@ -12,6 +16,8 @@ int main(){
     swap(&first, &second);
     printf("\nafter swap: ");
     print(first,second);
+    printf("\nnumber add:%d",add(first,second));
+
     return 0;
 }
 void enter(int *first, int *second){// con tro chua dia chi
@@ -36,6 +42,10 @@ void swap(int &first, int &second){
     first = second;
     second = temp;
 }
+int add(const int first, const int second){
+    return first + second;
+}
 void print(const int first,const int second){
     printf("\n{first number:%d, second number: %d}",first,second);
 }
+// viết xong 1 hàm thì e commit lên nhé: viết hàm = định nghĩa, xây dựng, gọi hàm
