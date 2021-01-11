@@ -2,8 +2,8 @@
 void enter(int *first, int *second);// su dung con tro de nhap
 void enter(int &first, int &second);
 void swap(int *first, int *second);
-void swap(int &first, int &second);
-void print(int first, int second);// su dung tham tri de xuat
+void swap(int &first, int &second);// hoán vị sử dụng truyền vào tham chiếu
+void print(const int first,const int second);// su dung tham tri de xuat, trong khi xuất thì first và second không thay đổi giá trị nên sử dụng thêm từ khóa const trước
 int main(){
     int first, second;
     enter(&first, &second);// gọi hàm truyền vào con trỏ
@@ -36,6 +36,6 @@ void swap(int &first, int &second){
     first = second;
     second = temp;
 }
-void print(int first, int second){
+void print(const int first,const int second){
     printf("\n{first number:%d, second number: %d}",first,second);
 }
