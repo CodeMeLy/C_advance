@@ -2,10 +2,8 @@
 void enter(int *first, int *second);// su dung con tro de nhap
 void enter(int &first, int &second);
 void swap(int *first, int *second);
-<<<<<<< HEAD
 void swap(int &first, int &second);
 void print(int first, int second);// su dung tham tri de xuat
-=======
 void swap(int &first, int &second);// hoán vị sử dụng truyền vào tham chiếu
 int add(const int first, const int second);//TODO: viết hàm cộng 2 số
 int sub(const int first, const int second);//TODO: viết hàm trừ 2 số
@@ -47,14 +45,12 @@ void swap(int &first, int &second){
     first = second;
     second = temp;
 }
-<<<<<<< HEAD
 void print(int first, int second){
 =======
 int add(const int first, const int second){
     return first + second;
 }
 void print(const int first,const int second){
->>>>>>> fd7eefd... add number
     printf("\n{first number:%d, second number: %d}",first,second);
 }
 // viết xong 1 hàm thì e commit lên nhé: viết hàm = định nghĩa, xây dựng, gọi hàm
