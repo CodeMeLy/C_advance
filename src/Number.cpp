@@ -16,8 +16,8 @@ int main(){
     swap(&first, &second);
     printf("\nafter swap: ");
     print(first,second);
-    printf("\nnumber add:%d",add(first,second));
-
+    printf("\nresut after add number:%d",add(first,second));
+    printf("\nresut after sub number:%d",sub(first,second));
     return 0;
 }
 void enter(int *first, int *second){// con tro chua dia chi
@@ -47,6 +47,12 @@ int add(const int first, const int second){
 }
 int sub(const int first, const int second){
     return first - second;
+}
+double mul(const int first, const int second){
+    return first *second;
+}
+float div(const int first, const int second){
+    return (float)first/second;
 }
 void print(const int first,const int second){
     printf("\n{first number:%d, second number: %d}",first,second);
