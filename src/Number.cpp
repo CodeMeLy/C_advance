@@ -44,8 +44,8 @@ void createDefaultInputFile(FILE *file, char *path,const int first,const int sec
 }
 void import(FILE *file,char *path, int &first, int &second){
 
-    const char* mode = "r";
-    file = fopen(path,"r");
+    const char* mode = "r";//read: chế độ đọc file
+    file = fopen(path,mode);
     if(file == NULL){// không có file thì tạo mới file
         createDefaultInputFile(file,path,first,second);
     }
@@ -97,26 +97,27 @@ void print(const int first,const int second){
 }
 bool existFile(char*path){
     struct stat buffer;
-    bool exist = !stat(path, &buffer);
-    return exist;
+    return !stat(path, &buffer);
 }
 
 void exportMaxValue(FILE *file, char *path,const int first,const int second){
-    const char* mode = "w";
+    const char* mode = "a";// append: chèn vào sau file
     const int max = findMax(first,second);
     file = fopen(path,mode);
-        fprintf(file,"first: %d, second:%d\n",first,second);
-        fprintf(file,"max = %d ",max);
-        fclose(file);
+    fprintf(file,"first: %d, second:%d\n",first,second);
+    fprintf(file,"max = %d \n",max);
+    fprintf(file,"------------------------------------\n");
+    fclose(file);
 }
 void exportCaculatorResult(FILE *file, char *path,const int first,const int second){
-    const char* mode = "w";
+    const char* mode = "a";
+    int summary = add(first,second);
+    int different = sub(first,second);
+    double product = mul(first,second);
+    float quotient = div(first,second);
     file = fopen(path,mode);
-        int summary = add(first,second);
-        int different = sub(first,second);
-        double product = mul(first,second);
-        float quotient = div(first,second);
-        fprintf(file,"first: %d, second:%d\n",first,second);
-        fprintf(file,"summary: %d, different:%d, product:%.0f, quotient: %.2f",summary,different,product,quotient);
-        fclose(file);
+    fprintf(file,"first: %d, second:%d\n",first,second);
+    fprintf(file,"summary: %d, different:%d, product:%.0f, quotient: %.2f\n",summary,different,product,quotient);
+    fprintf(file,"-----------------------------------------\n");
+    fclose(file);
 }
