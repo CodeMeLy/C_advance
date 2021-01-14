@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include <sys/stat.h>
 void enter(int *first, int *second);// su dung con tro de nhap
 void swap(int *first, int *second);
 int add(const int first, const int second);
