@@ -13,9 +13,9 @@ float div(const int first, const int second);
 int findMax(const int first, const int second);
 int main(){
     FILE *file;
-    char* input_path = "./data/data.in";
-    char* max_path = "./data/max.out";
-    char* caculator_path = "./data/caculator.out";
+    char* input_path = "./data/number/data.in";
+    char* max_path = "./data/number/max.out";
+    char* caculator_path = "./data/number/caculator.out";
     int first = 0, second = 0;
     import(file,input_path,first,second);
     exportMaxValue(file,max_path,first,second);
