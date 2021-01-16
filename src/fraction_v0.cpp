@@ -30,6 +30,10 @@ void enter(Fraction &input){
     printf("enter denominator of fraction : ");
     scanf("%d", &input.denominator);
 }
+void printValue(Fraction output){
+    output = compact(output);
+    printf("%d/%d", output.numerator, output.denominator);
+}
 int  gcd(int first, int second){
     first = abs(first);
     second = abs(second);
@@ -72,10 +76,7 @@ Fraction divide(Fraction first, Fraction second){
     result.denominator = first.denominator * second.numerator;
     return result;
 }
-void printValue(Fraction output){
-    output = compact(output);
-    printf("%d/%d", output.numerator, output.denominator);
-}
+
 CompareResult compare(Fraction first, Fraction second){
     CompareResult result = EQUAL;
     if (first.numerator * second.denominator > first.denominator * second.numerator){
