@@ -24,6 +24,12 @@ int main(){
     printValue(fraction);
     return 0;
 }
+void enter(Fraction &input){
+    printf("enter numerator of fraction : ");
+    scanf("%d", &input.numerator);
+    printf("enter denominator of fraction : ");
+    scanf("%d", &input.denominator);
+}
 int  gcd(int first, int second){
     first = abs(first);
     second = abs(second);
@@ -88,10 +94,4 @@ void printCompareResult(Fraction first, Fraction second){
     } else {
         printf("fraction 1 = fraction 2");
     }
-}
-void enter(Fraction &input){
-    printf("enter numerator of fraction : ");
-    scanf("%d", &input.numerator);
-    printf("enter denominator of fraction : ");
-    scanf("%d", &input.denominator);
 }
