@@ -9,6 +9,7 @@ int findMax(const int first, const int second);
 void print(const int first,const int second);// su dung tham tri de xuat, trong khi xuất thì first và second không thay đổi giá trị nên sử dụng thêm từ khóa const trước
 void printMax(const int first, const int second);
 void printCaculator(const int first, const int second);
+
 int main(){
     int first,second;
     enter(first,second);// gọi hàm truyền vào tham chiếu
