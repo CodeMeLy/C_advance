@@ -7,6 +7,8 @@ int sub(const int first, const int second);
 double mul(const int first, const int second);
 float div(const int first, const int second);
 void printCaculator(const int first, const int second);
+int findMax(const int first, const int second);//tìm Max = tham trị
+void printMax(const int first, const int second);
 int main(){
     int first, second;
     enter(first, second);
@@ -15,6 +17,7 @@ int main(){
     printf("\nAfter swap");
     output(first,second);
     printCaculator(first,second);
+    printMax(first,second);
 }
 void enter(int &first, int &second){
     printf("enter first number: ");
@@ -56,4 +59,13 @@ void printCaculator(const int first, const int second)
     output(first, second);
     printf(" {summary: %d, different:%d, product:%.0f, quotient: %.2f}\n", summary, different, product, quotient);
     printf("-----------------------------------------");
+}
+int findMax(const int first, const int second)
+{
+    return (first > second) ? first : second;
+}
+void printMax(const int first, const int second)
+{
+    const int max = findMax(first, second);
+    printf("\nmax = %d \n", max);
 }
