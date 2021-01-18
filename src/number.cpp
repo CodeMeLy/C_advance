@@ -10,5 +10,5 @@ void enter(int &first, int &second){
     scanf("%d",&first);
      printf("enter second value:");
     scanf("%d",&second);
-    
+    //:O
 }
