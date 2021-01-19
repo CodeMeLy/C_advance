@@ -9,6 +9,7 @@ float div(const int first, const int second);
 void printCaculator(const int first, const int second);
 int findMax(const int first, const int second);//tìm Max = tham trị
 void printMax(const int first, const int second);
+bool existFile(char*path);
 void exportInputValue(FILE *file, char *path, const int first, const int second);
 void exportMaxValue(FILE *file, char *path, const int first, const int second);
 int main(){
@@ -76,6 +77,10 @@ void printMax(const int first, const int second)
 {
     const int max = findMax(first, second);
     printf("\nmax = %d \n", max);
+}
+bool existFile(char*path){
+    struct stat buffer;
+    return !stat(path, &buffer);
 }
 void exportInputValue(FILE *file, char *path, const int first, const int second){
     // chuỗi về sau mình sử dụng *path thay vì path
