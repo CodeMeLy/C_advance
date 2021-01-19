@@ -1,7 +1,6 @@
 #include<stdio.h>
 int main(){
     // TODO: in ra hello world
-    printf("Hello!");
-    printf("hi");
+    printf("Hello!);
     return 0;
 }
