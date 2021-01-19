@@ -10,18 +10,21 @@ void printCaculator(const int first, const int second);
 int findMax(const int first, const int second);//tìm Max = tham trị
 void printMax(const int first, const int second);
 void exportInputValue(FILE *file, char *path, const int first, const int second);
+void exportMaxValue(FILE *file, char *path, const int first, const int second);
 int main(){
     int first, second;
     FILE *file;
-    char *path = "./data/number/inputvalue.out";
+    char *input_path = "./data/number/inputvalue.out";
+    char *max_path = "./data/number/max.out";
     enter(first, second);
     output(first, second);
-    exportInputValue(file,path,first,second);
+    exportInputValue(file,input_path,first,second);
     swap(first,second);
     printf("\nAfter swap");
     output(first,second);
     printCaculator(first,second);
-    printMax(first,second);
+    // printMax(first,second);
+    exportMaxValue(file,max_path,first,second);
 
 }
 void enter(int &first, int &second){
@@ -82,4 +85,15 @@ void exportInputValue(FILE *file, char *path, const int first, const int second)
     fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);//viết vào file có đường dẫn là path
     
     fclose(file);
+}
+void exportMaxValue(FILE *file, char *path, const int first, const int second){
+    char *mode = "a";
+    // tìm giá trị max
+    const int max = findMax(first,second);
+    // xuất ra file
+    file = fopen(path,mode);
+    fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);//viết vào file có đường dẫn là path
+    fprintf(file,"max = %d\n",max);
+    fprintf(file,"_______________________\n");
+    fclose(file);    
 }
