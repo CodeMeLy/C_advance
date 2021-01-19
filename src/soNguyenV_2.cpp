@@ -9,15 +9,20 @@ float div(const int first, const int second);
 void printCaculator(const int first, const int second);
 int findMax(const int first, const int second);//tìm Max = tham trị
 void printMax(const int first, const int second);
+void exportInputValue(FILE *file, char *path, const int first, const int second);
 int main(){
     int first, second;
+    FILE *file;
+    char *path = "./data/number/inputvalue.out";
     enter(first, second);
     output(first, second);
+    exportInputValue(file,path,first,second);
     swap(first,second);
     printf("\nAfter swap");
     output(first,second);
     printCaculator(first,second);
     printMax(first,second);
+
 }
 void enter(int &first, int &second){
     printf("enter first number: ");
@@ -68,4 +73,13 @@ void printMax(const int first, const int second)
 {
     const int max = findMax(first, second);
     printf("\nmax = %d \n", max);
+}
+void exportInputValue(FILE *file, char *path, const int first, const int second){
+    // chuỗi về sau mình sử dụng *path thay vì path
+    char *mode = "a";// chế độ append: file mở ra chỉ để ghi. Nếu chưa có file nó sẽ tự tạo
+    // file: mở --> làm gì đó --> đóng file
+    file = fopen(path,mode);// mở file có đường dẫn là path ra để ghi file
+    fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);//viết vào file có đường dẫn là path
+    
+    fclose(file);
 }
