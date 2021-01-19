@@ -12,6 +12,7 @@ int findMax(const int first, const int second);//tìm Max = tham trị
 void printMax(const int first, const int second);
 bool existFile(char*path);
 void createDefaultInputFile(FILE *file, char *path,const int first,const int second);
+void import(FILE *file, char *path, int &first, int &second);
 void exportInputValue(FILE *file, char *path, const int first, const int second);
 void exportMaxValue(FILE *file, char *path, const int first, const int second);
 int main(){
@@ -22,7 +23,7 @@ int main(){
     char *create_path = "./data/number/ahihi.out";
     enter(first, second);
     output(first, second);
-    createDefaultInputFile(file,create_path,first,second);
+    import(file,create_path,first,second);
     exportInputValue(file,input_path,first,second);
     swap(first,second);
     printf("\nAfter swap");
@@ -93,6 +94,19 @@ void createDefaultInputFile(FILE *file, char *path,const int first,const int sec
         fprintf(file,"%d %d\n",first,second);
         fclose(file);
     }
+}
+void import(FILE *file,char *path, int &first, int &second){
+
+    const char* mode = "r";//read: chế độ đọc file
+    file = fopen(path,mode);
+    if(file == NULL){// không có file thì tạo mới file
+        createDefaultInputFile(file,path,first,second);
+    }
+    else{
+        fscanf(file,"%d",&first);
+        fscanf(file,"%d",&second);
+    }
+    fclose(file);
 }
 void exportInputValue(FILE *file, char *path, const int first, const int second){
     // chuỗi về sau mình sử dụng *path thay vì path
