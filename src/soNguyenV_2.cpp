@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<sys/stat.h>
 void enter(int &first, int &second);//sử dụng tham chiếu
 void output(int first, int second);//xuất 2 số = tham trị
 void swap(int &first, int &second); // hoán vị sử dụng truyền vào tham chiếu
@@ -10,6 +11,7 @@ void printCaculator(const int first, const int second);
 int findMax(const int first, const int second);//tìm Max = tham trị
 void printMax(const int first, const int second);
 bool existFile(char*path);
+void createDefaultInputFile(FILE *file, char *path,const int first,const int second);
 void exportInputValue(FILE *file, char *path, const int first, const int second);
 void exportMaxValue(FILE *file, char *path, const int first, const int second);
 int main(){
@@ -17,8 +19,10 @@ int main(){
     FILE *file;
     char *input_path = "./data/number/inputvalue.out";
     char *max_path = "./data/number/max.out";
+    char *create_path = "./data/number/ahihi.out";
     enter(first, second);
     output(first, second);
+    createDefaultInputFile(file,create_path,first,second);
     exportInputValue(file,input_path,first,second);
     swap(first,second);
     printf("\nAfter swap");
@@ -78,9 +82,17 @@ void printMax(const int first, const int second)
     const int max = findMax(first, second);
     printf("\nmax = %d \n", max);
 }
-bool existFile(char*path){
+bool existFile(char *path){
     struct stat buffer;
     return !stat(path, &buffer);
+}
+void createDefaultInputFile(FILE *file, char *path,const int first,const int second){
+    const char* mode = "w";
+    if(!existFile(path)){// nếu chưa tồn tại file thì mới tạo mới file
+        file = fopen(path,mode);
+        fprintf(file,"%d %d\n",first,second);
+        fclose(file);
+    }
 }
 void exportInputValue(FILE *file, char *path, const int first, const int second){
     // chuỗi về sau mình sử dụng *path thay vì path
