@@ -24,10 +24,12 @@ float calculateGPA(Mark *input);
 char* classify(Mark *input);
 void print(Mark *output);
 void print(Date *output);
+void print(Student *output);
 int main(){
     Student *student;
     student = (Student*)malloc(sizeof(Student));
     enter(student);
+    print(student);
     return 0;
 }
 void enter(Mark *input){
@@ -85,8 +87,15 @@ char* classify(Mark *input){
 void print(Mark *output){
     float gpa = calculateGPA(output);
     char *classification = classify(output);
-    printf("Mark:{math: %.2f, physical: %.2f, chemistry:%.2f, gpa: %.2f,classification:%s}\n",output->math,output->physical,output->chemistry,gpa,classification);   
+    printf("mark:{math: %.2f, physical: %.2f, chemistry:%.2f, gpa: %.2f,classification:%s}",output->math,output->physical,output->chemistry,gpa,classification);   
 }
 void print(Date *output){
-    printf("%d/%d/%d",output->day,output->month,output->year);    
+    printf("\"%d/%d/%d\"",output->day,output->month,output->year);    
+}
+void print(Student *output){
+    printf("{id: %s, name: %s, gender: %s,",output->id,output->name,output->gender);
+    print(output->mark);
+    printf(", birthday:");
+    print(output->birthday);
+    printf("}");
 }
