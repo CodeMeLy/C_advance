@@ -1,13 +1,17 @@
 #include<stdio.h>
 void enter(int &first, int &second);
-void print(const int first, const int second);
+void swap(int &first,int &second);
 int add(const int first, const int second);
 int sub(const int first, const int second);
 int mult(const int first, const int second);
 float div(const int first, const int second);
+void print(const int first, const int second);
 int main(){
     int first = 0,second = 0;
     enter(first,second);
+    print(first,second);
+    swap(first,second);
+    printf("\nafter swap:\n");
     print(first,second);
     return 0;
 }
@@ -16,6 +20,11 @@ void enter(int &first, int &second){
     scanf("%d",&first);
     printf("Enter second number:");
     scanf("%d",&second);
+}
+void swap(int &first,int &second){
+    int temp = first;
+    first = second;
+    second = temp;
 }
 int add(const int first, const int second){
     return first+second;
