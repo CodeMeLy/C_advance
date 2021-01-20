@@ -5,6 +5,7 @@ int add(const int first, const int second);
 int sub(const int first, const int second);
 // tương tự nhân chia: nhân mul, chia div. e viết đi
 int mul(const int first, const int second);
+float div(const int first, const int second);
 void printCaculator(const int first, const int second);
 int main(){
     int first = 0, second = 0;
@@ -31,9 +32,13 @@ int sub(const int first, const int second){
 int mul(const int first, const int second){
     return first *second;
 }
+float div(const int first, const int second){
+    return (float)first /second;
+}
 void printCaculator(const int first, const int second){
     int sum  = add(first,second);
     int diff = sub(first,second);
     int product  = mul(first,second);
-    printf("{first:%d, second:%d, summary: %d, different: %d, product: %d}\n",first,second,sum,diff,product);
+    float division = div(first,second);
+    printf("{first:%d, second:%d, summary: %d, different: %d, product: %d, division: %.2f}\n",first,second,sum,diff,product,division);
 }
