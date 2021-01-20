@@ -43,4 +43,4 @@ void printCaculator(const int first, const int second){
     int end = div(first,second);
     printf("{first: %d, second: %d, summary: %d, different: %d, next: %d, end: %d }\n",first,second,sum,diff,next,end);
        
-}
+}//:O :O :O :O
