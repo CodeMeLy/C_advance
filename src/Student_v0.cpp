@@ -10,25 +10,24 @@ typedef struct Date{
     int month;
     int year;
 };
+typedef struct Student{
+    char id[20];
+    char name[30];
+    char gender[30];
+    Mark *mark;
+    Date *birthday;
+};
 void enter(Mark *input);
 void enter(Date *input);
+void enter(Student *input);
 float calculateGPA(Mark *input);
 char* classify(Mark *input);
 void print(Mark *output);
 void print(Date *output);
 int main(){
-    Mark *mark;// sử dụng biến con trỏ
-    Date *date;
-    mark =(Mark*) malloc(sizeof(Mark));// cấp phát bộ nhớ động cho mark
-    date = (Date*) malloc(sizeof(Date));
-    enter(mark);
-    enter(date);
-    print(mark);
-    print(date);
-    free(mark);
-    free(date);
-    // Mark mark; // sử dụng biến bình thường
-    // enter(&mark);
+    Student *student;
+    student = (Student*)malloc(sizeof(Student));
+    enter(student);
     return 0;
 }
 void enter(Mark *input){
@@ -41,12 +40,27 @@ void enter(Mark *input){
 
 }
 void enter(Date *input){
-    printf("day: ");
+    printf("Enter day: ");
     scanf("%d",&input->day);
-    printf("month: ");
+    printf("Enter month: ");
     scanf("%d",&input->month);
-    printf("year: ");
+    printf("Enter year: ");
     scanf("%d",&input->year);
+}
+void enter(Student *input){
+    fflush(stdin);
+    printf("Enter id:");
+    gets(input->id);
+    printf("Enter name:");
+    gets(input->name);
+    printf("Enter gender:");
+    gets(input->gender);
+    printf("Enter birthday:\n");
+    input->birthday = (Date*) malloc(sizeof(Date));
+    enter(input->birthday);
+    printf("Enter mark:\n");
+    input->mark = (Mark*) malloc(sizeof(Mark));// cấp phát bộ nhớ động cho mark
+    enter(input->mark);
 }
 float calculateGPA(Mark *input){
     return (input->math + input->physical + input->chemistry)/3;
