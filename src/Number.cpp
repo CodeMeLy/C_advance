@@ -1,10 +1,13 @@
 #include<stdio.h>
 void enter(int &first, int &second);// nhập 2 số truyền vào tham chiếu
-void print(int first, int second);
+int add(const int first, const int second);// cộng 2 số
+void printInputValue(const int first,const int second);// in 2 số truyền vào tham trị
+void printCaculator(const int first, const int second);// in kết quả tính toán
 int main(){
     int first,second;
     enter(first,second);
-    print(first,second);
+    printInputValue(first,second);
+    printCaculator(first,second);
     return 0;
 }
 void enter(int &first, int &second){
@@ -13,7 +16,14 @@ void enter(int &first, int &second){
     printf("enter second number:");
     scanf("%d",&second);
 }
-void print(int first, int second){
+int add(const int first, const int second){
+    return first + second;   
+}
+void printInputValue(const int first,const int second){
     printf("{first: %d, second: %d}\n",first,second);
 }
-// hi hi hi
+void printCaculator(const int first, const int second){
+    int sum = add(first, second);
+    printf("{first: %d, second: %d, sum: %d}\n",first,second,sum);
+       
+}
