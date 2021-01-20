@@ -2,12 +2,12 @@
 void enter(int &first, int &second);
 void print(const int first, const int second);
 int add(const int first, const int second);
-// tương tự hàm cộng em là hàm trừ nhân chia đi. không copy
 int sub(const int first, const int second);
 int mult(const int first, const int second);
+float div(const int first, const int second);
 int main(){
     int first = 0,second = 0;
-    enter(first,second);// kiểm tra hàm enter đúng hay sai
+    enter(first,second);
     print(first,second);
     return 0;
 }
@@ -26,10 +26,13 @@ int sub(const int first, const int second){
 int mul(const int first, const int second){
     return first*second;
 }
+float div(const int first, const int second){
+    return (float)first/second;
+}
 void print(const int first, const int second){
     int sum = add(first,second);
     int diff = sub(first,second);
-    int mult= mul(first,second);
-
-    printf("{first:%d, second:%d, summary: %d, different:%d, multiplication: %d}",first,second,sum,diff,mult);// share là chia sẻ cảm xúc, chứ k phải chia nhân
+    int mult = mul(first,second);
+    float division = div(first,second);
+    printf("{first:%d, second:%d, summary: %d, different:%d, multiplication: %d, division:%.2f}",first,second,sum,diff,mult,division);
 }
