@@ -6,14 +6,15 @@ bool existFile(char*path);
 void createDefaultInputFile(FILE *file, char *path,const int size);
 int enter(int **array);
 int import(FILE *file,char *path,int **array);
-int findMax(const int *array, const int size);
+int findMax(const int *array, const int size);// hàm tìm ra max
 void print(int *array, int size);
 void pubbleSort(int *array,const int size);
 void exportInputValue(FILE *file, char *path,const int *array, const int size);
 void exportMaxValue(FILE *file, char *path,const int *array, const int size);
 void exportSorterValue(FILE *file, char *path,int *array,const int size);
 int main(){
-    int *array,size = 0;
+    int *array;
+    int size = 0; // mảng ban đầu không có phần tử 
     FILE *file;
     char* input_path = "./data/numbers/data.in";
     char* max_path = "./data/numbers/max.out";
@@ -47,9 +48,12 @@ void createDefaultInputFile(FILE *file, char *path,const int size){
 int enter(int **array){
     int size = 0;
     int temp;
+    // nhập vào số lượng phần tử
     printf("size: ");
     scanf("%d",&size);
-    *array = (int*)malloc(size*sizeof(int));// cap phat bo nho dong
+    // cấp phát bộ nhơ động cho size phần tử
+    *array = (int*)malloc(size*sizeof(int));
+    // nhập vào tất cả các phần tử có trong mảng
     printf("data: \n");
     for(int index = 0;index<size;index++){
         printf("array[%d]: ",index);
