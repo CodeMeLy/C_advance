@@ -1,24 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <sys/stat.h>
+void swap(int *first, int *second);
 bool existFile(char*path);
 void createDefaultInputFile(FILE *file, char *path,const int size);
 int enter(int **array);
 int import(FILE *file,char *path,int **array);
 int findMax(const int *array, const int size);
 void print(int *array, int size);
+void pubbleSort(int *array,const int size);
 void exportInputValue(FILE *file, char *path,const int *array, const int size);
 void exportMaxValue(FILE *file, char *path,const int *array, const int size);
+void exportSorterValue(FILE *file, char *path,int *array,const int size);
 int main(){
     int *array,size = 0;
     FILE *file;
     char* input_path = "./data/numbers/data.in";
     char* max_path = "./data/numbers/max.out";
+    char* sort_path = "./data/numbers/sort.out";
     size = enter(&array);
     exportInputValue(file,input_path,array,size);
     print(array,size);
+    pubbleSort(array,size);
+    print(array,size);
     exportMaxValue(file,max_path,array,size);
+    exportSorterValue(file,sort_path,array,size);
     return 0;
+}
+void swap(int *first, int *second){
+    int temp = *first;// *first: lấy giá trị của con trỏ first
+    *first = *second;
+    *second = temp;
 }
 bool existFile(char*path){
     struct stat buffer;
@@ -74,6 +86,15 @@ int findMax(const int *array, const int size){
     }
     return max;
 }
+void pubbleSort(int *array,const int size){
+    for(int current = 0;current < size-1;current++){
+        for(int next = current+1;next<size; next++){
+            if(*(array+current)>*(array+next)){
+                swap(&*(array+current),&*(array+next));
+            }
+        }
+    }
+}
 void exportInputValue(FILE *file, char *path,const int *array, const int size){
     const char* mode = "w";
     file = fopen(path,mode);
@@ -94,6 +115,26 @@ void exportMaxValue(FILE *file, char *path,const int *array, const int size){
     }
     fprintf(file,"\nmax = %d \n",max);
     fprintf(file,"------------------------------------\n");
+    fclose(file);
+}
+void exportSorterValue(FILE *file, char *path,int *array,const int size){
+    const char* mode = "a";// append: chèn vào sau file
+    file = fopen(path,mode);
+    fprintf(file,"size: %d\n",size);
+    fprintf(file,"data:\n");
+    // before sort
+    fprintf(file,"- before sort:");
+    for(int index=0; index<size; index++){
+        fprintf(file,"%d ",*(array+index));
+    }
+    fprintf(file,"\n");
+    //after sort
+    fprintf(file,"- after sort:");
+    pubbleSort(array,size);
+    for(int index=0; index<size; index++){
+        fprintf(file,"%d ",*(array+index));
+    }
+    fprintf(file,"\n------------------------------------\n");
     fclose(file);
 }
 void print(int *array, int size){
