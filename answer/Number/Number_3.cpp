@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include <sys/stat.h>
-// bổ sung các hàm nhập, xuất
+// bổ sung các hàm nhập
 void enter(const int &first,const int &second);
 bool existFile(char*path);
 void createDefaultInputFile(FILE *file, char *path,const int first,const int second);
 void import(FILE *file, char *path, int &first, int &second);
+// bổ sung hàm xuất
 void print(const int first,const int second);// su dung tham tri de xuat, trong khi xuất thì first và second không thay đổi giá trị nên sử dụng thêm từ khóa const trước
 void exportInputValue(FILE *file, char *path,const int first,const int second);
 void exportMaxValue(FILE *file, char *path,const int first,const int second);
