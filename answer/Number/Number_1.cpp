@@ -14,12 +14,6 @@ int main(){
     test_caculator();
     return 0;
 }
-void enter(int &first, int &second){// truyền vào tham chiếu
-    printf("enter first number: ");
-    scanf("%d",&first);// scanf truyen vao 1 dia chi, &first: lập địa chỉ của first
-    printf("enter second number:");
-    scanf("%d",&second);
-}
 void swap(int &first, int &second){
      int temp = first;
     first = second;
