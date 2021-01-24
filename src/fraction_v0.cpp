@@ -5,7 +5,6 @@
 enum CompareResult{
     LARGER  = 1, EQUAL = 0, SMALLER = -1
 };
-// mình thêm dòng này nhé ^^
 typedef struct Fraction {
     int numerator, denominator;
 };
