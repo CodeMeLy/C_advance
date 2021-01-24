@@ -3,4 +3,4 @@
 - tutorial: những bài tập chủ yếu để nhìn nhận kiến thức
 - mini_project: đồ án cuối khóa
 - Mục tiêu: Đầu tháng 3, mình sẽ bắt đầu làm teamwork và làm mini_project
-<img src="./img/c_advance.jpg" alt="nội dung chinh">
+<img src="./img/C_advance.jpg" alt="nội dung chinh">
