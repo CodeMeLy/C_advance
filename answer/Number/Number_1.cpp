@@ -1,23 +1,15 @@
 #include<stdio.h>
 #include<assert.h>
-void swap(int &first, int &second);// hoán vị sử dụng truyền vào tham chiếu
 int add(const int first, const int second);// cộng 2 số
 int subtract(const int first, const int second);// trừ 2 số
 double multiply(const int first, const int second);// nhân 2 số
 float divide(const int first, const int second);// chia 2 số
 int findMax(const int first, const int second);// tìm max 2 số
 // test function
-void test_swap();
 void test_caculator();
 int main(){
-    test_swap();
     test_caculator();
     return 0;
-}
-void swap(int &first, int &second){
-     int temp = first;
-    first = second;
-    second = temp;
 }
 int add(const int first, const int second){
     return first + second;
@@ -26,37 +18,30 @@ int subtract(const int first, const int second){
     return first - second;
 }
 double multiply(const int first, const int second){
-    return first*second;
+    return first * second;
 }
 float divide(const int first, const int second){
-    return (float)first/second;
+    return (float)first / second;
 }
 int findMax(const int first, const int second){
-    return (first>second)?first:second;
+    return first>second?first:second;
 }
-void test_swap(){
-    printf("swap:");
-    int first = 3, second = 2;
-    swap(first, second);
-    assert(first==2 && second== 3);
-    printf("pass!\n");
-}
-
+// test
 void test_caculator(){
-    printf("caculator: \n");
-    printf("\t -add: ");
+    printf("phép tính: \n");
+    printf("\t -cộng 2 số: ");
     assert(add(3,4)==7);
-    printf("pass!\n");
-    printf("\t -subtract: ");
+    printf("chính xác!\n");
+    printf("\t -trừ 2 số: ");
     assert(subtract(3,4)==-1);
-    printf("pass!\n");
-    printf("\t -multiply: ");
+    printf("chính xác!\n");
+    printf("\t -nhân 2 số: ");
     assert(multiply(3,4)==12);
-    printf("pass!\n");
-    printf("\t -divide: ");
+    printf("chính xác!\n");
+    printf("\t -chia 2 số: ");
     assert(divide(3,4)==0.75);
-    printf("pass!\n");
-    printf("\t -find max of 2 numbers: ");
+    printf("chính xác!\n");
+    printf("\t -tìm max 2 số: ");
     assert(findMax(3,4)==4 && findMax(4,4)==4 && findMax(4,3)==4);
-    printf("pass!\n");
+    printf("chính xác!\n");
 }
