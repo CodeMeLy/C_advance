@@ -43,11 +43,16 @@ int  gcd(int first, int second){
 Fraction compact (Fraction fraction){
     Fraction result;
     // TODO: hoàn thiện hàm rút gọn 1 phân số. kết quả sau khi rút gọn lưu vào biến result
+    int temp = gcd(fraction.numerator, fraction.denominator);
+    result.numerator = fraction.numerator / temp;
+    result.denominator = fraction.denominator / temp;
     return result;
 }   
 Fraction plus(Fraction first, Fraction second){
     Fraction result;
-    //TODO: hoàn thiện hàm tính tổng 2 phân số, không yêu cầu rút gọn phân số, không yêu cầu rút gọn phân số
+    //TODO: hoàn thiện hàm tính tổng 2 phân số, không yêu cầu rút gọn phân số
+    result.numerator = (first_fraction.numerator * second_fraction.denominator) + (second_fraction.numerator * first_fraction.denominator);
+    result.denominator = first_fraction.denominator * second_fraction.denominator;
     return result;
 }
 Fraction minus(Fraction first, Fraction second){
