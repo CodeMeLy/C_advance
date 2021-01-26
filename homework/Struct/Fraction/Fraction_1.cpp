@@ -8,7 +8,7 @@ enum CompareResult{
 typedef struct Fraction {
     int numerator, denominator;
 };
-int gcd(int first, int second);// ước chung lớn nhất
+int findGcd(int first, int second);// ước chung lớn nhất
 Fraction compact (Fraction fraction);// rút gọn phân số
 Fraction plus(Fraction first, Fraction second);// cộng hai phân số
 Fraction minus(Fraction first, Fraction second);// trừ 2 phân số
@@ -26,7 +26,7 @@ int main(){
     return 0;
 }
 
-int  gcd(int first, int second){
+int findGcd(int first, int second){
     // TODO: hoàn thiện hàm tìm ước số chung. Hàm trả về ước số chung của 2 số, không yêu cầu rút gọn phân số
     if(first==0||second==0){
         return first+second;
@@ -43,7 +43,7 @@ int  gcd(int first, int second){
 Fraction compact (Fraction fraction){
     Fraction result;
     // TODO: hoàn thiện hàm rút gọn 1 phân số. kết quả sau khi rút gọn lưu vào biến result
-    int temp = gcd(fraction.numerator, fraction.denominator);
+    int temp = findGcd(fraction.numerator, fraction.denominator);
     result.numerator = fraction.numerator / temp;
     result.denominator = fraction.denominator / temp;
     return result;
@@ -83,6 +83,7 @@ Fraction divide(Fraction first, Fraction second){
  **/
 CompareResult compare(Fraction first, Fraction second){
     // TODO: hoàn thiện hàm so sánh 2 phân số
+    
     return EQUAL;
 }
 void test_compare(){
@@ -104,7 +105,7 @@ void test_compare(){
 void test_compact(){
     printf("<--->rút gọn phân số: \n");
     printf("\t- ước chung lớn nhất: ");
-    assert(gcd(3,4)==1 && gcd(3,9)==3 && gcd(6,3)==3 && gcd(3,3)==3);
+    assert(findGcd(3,4)==1 && findGcd(3,9)==3 && findGcd(6,3)==3 && findGcd(3,3)==3);
     printf("chính xác!\n");
     printf("\t-rút gọn phân số: ");  
     Fraction first = {.numerator = 3, .denominator = 4};
