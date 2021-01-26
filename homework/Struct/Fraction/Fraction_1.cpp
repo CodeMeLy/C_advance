@@ -83,8 +83,13 @@ Fraction divide(Fraction first, Fraction second){
  **/
 CompareResult compare(Fraction first, Fraction second){
     // TODO: hoàn thiện hàm so sánh 2 phân số
-    
-    return EQUAL;
+    CompareResult result = EQUAL;
+    if(first.numerator*second.denominator > first.denominator*second.numerator){
+        result = LARGER;
+    }else if(first.numerator*second.denominator < first.denominator*second.numerator){
+        result = SMALLER;
+    }
+    return result;
 }
 void test_compare(){
     printf("<---> so sánh 2 phân số: \n");
