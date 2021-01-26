@@ -58,16 +58,22 @@ Fraction plus(Fraction first, Fraction second){
 Fraction minus(Fraction first, Fraction second){
     Fraction result;
     // TODO: hoàn thiện hàm hiệu 2 phân só, không yêu càu rút gọn phân số
+    result.numerator = (first_fraction.numerator * second_fraction.denominator) - (second_fraction.numerator * first_fraction.denominator);
+    result.denominator = first_fraction.denominator * second_fraction.denominator;
     return result;
 }
 Fraction multiply(Fraction first, Fraction second){
     Fraction result;
     // TODO: hoàn thiện hàm nhân 2 phân số, không yêu cầu rút gọn phân số
+    result.numerator = first_fraction.numerator * second_fraction.numerator;
+    result.denominator = first_fraction.denominator * second_fraction.denominator;
     return result;
 }
 Fraction divide(Fraction first, Fraction second){
     Fraction result;
     // TODO: hoàn thiện hàm chia 2 phân số, không yêu cầu rút gọn phân số
+    result.numerator = first_fraction.numerator * second_fraction.denominator;
+    result.denominator = first_fraction.denominator * second_fraction.numerator;
     return result;
 }
 /** hàm so sánh tương quan của hai phân số:
