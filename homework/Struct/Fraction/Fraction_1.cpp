@@ -28,7 +28,17 @@ int main(){
 
 int  gcd(int first, int second){
     // TODO: hoàn thiện hàm tìm ước số chung. Hàm trả về ước số chung của 2 số, không yêu cầu rút gọn phân số
-    return 0;
+    if(first==0||second==0){
+        return first+second;
+    }
+    while(first!=second){
+        if(first>second){
+            first-=second;
+        }else{
+            second-=first;
+        }
+    }
+    return first;
 }
 Fraction compact (Fraction fraction){
     Fraction result;
