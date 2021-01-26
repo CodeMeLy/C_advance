@@ -15,12 +15,11 @@ int add(const int first, const int second){
     return first + second;
 }
 int subtract(const int first, const int second){
-    // TODO: hoàn thiện hàm tính hiệu 2 số
-    return 0;
+    return first - second;
 }
 double multiply(const int first, const int second){
     // TODO: hoàn thiện hàm tính tích 2 số
-    return 0;
+
 }
 float divide(const int first, const int second){
     // TODO: hoàn thiện hàm tính thương 2 số
