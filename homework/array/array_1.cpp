@@ -17,24 +17,54 @@ int main(){
 }
 void enter(int &size){
     // TODO: hoàn thiện hàm nhập vào số lượng phần tử
-
+    printf("Enter n: ");
+    scanf("%d", &size);
 }
 void swap(int &first, int &second){
     // TODO: hoàn thiện hàm swap
+    int temp = first;
+        first = second;
+        second = temp;
 }
 void enter(int *array, int size){
     // TODO: hoàn thiện hàm nhập mảng
+    for(int i=0;i<size;i++){
+        printf("a[%d]= ", i+1);
+        scanf("%d", array[i]);
+    }
 }
 int findMax(int *array, int size){
     // TODO: hoàn thiện hàm tìm max
-    return 0;
+    int max=array[0];
+    for(int i=1;i<size;i++){
+        if(array[i]>max){
+            max = array[i];
+        }
+    }
+    return max;
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size){
     // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
+    for(int i=0;i<first_size;i++){
+        for(int j=0;j<second_size;j++){
+            if(first[i]==second[j]){
+            return true;
+            }
+        }
+    }
     return false;
 }
 void ascSort(int *array, int size){
     // TODO: hoàn thiện hàm sắp xếp một mảng
+    for (int i = 0; i < size-1; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] > array[j]) {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
 }
 // test 
 void test_findMax(){
