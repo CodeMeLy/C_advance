@@ -20,7 +20,9 @@ void enter(int &first, int &second){
     } while(second ==0);
 }
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int temp = first;
+    first = second;
+    second = temp;
 }
 // test
 void test_enter(){
