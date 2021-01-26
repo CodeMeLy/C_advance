@@ -22,8 +22,11 @@ void enter(int *first, int *second){
         }
     }while(*second == 0);
 }
+// hoán vị theo giá trị
 void swap(int *first, int *second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int temp = *first;
+    *first = *second;
+    *second = temp;
 }
 void test_enter(){
     int first = 0, second = 0;
