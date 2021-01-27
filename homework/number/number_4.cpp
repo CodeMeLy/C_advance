@@ -8,6 +8,7 @@
 - import dữ liệu có sẵn từ một file .in
 - menu */
 #include <stdio.h>
+#include<sys/stat.h>
 void enter(int *first, int *second);
 void swap(int *first, int *second);
 void enter(int &first, int &second);
@@ -19,14 +20,18 @@ float divide(const int first, const int second);    // chia 2 số
 int findMax(const int first, const int second);     // tìm max 2 số
 void printMax(const int first, const int second);
 void printCaculator(const int first, const int second);
+void exportInputValue(FILE *file, char *path, const int first, const int second);
 int main(){
     int first, second;
+    FILE *file;
+    char *input_path = "./data/number/inputvalue.out";
     enter(&first,&second);
     swap(&first, &second);
     //enter(first,second);
     //swap(first,second);
     printMax(first,second);
     printCaculator(first,second);
+    exportInputValue(file,input_path,first,second);
 }
 void enter(int *first, int *second)
 {   //hàm nhập sử dụng con trỏ
@@ -89,4 +94,13 @@ void printCaculator(const int first, const int second)
     float quotient = divide(first, second);
     printf("\n{summary: %d, different:%d, product:%.0f, quotient: %.2f}\n", summary, different, product, quotient);
     printf("-----------------------------------------\n");
+}
+void exportInputValue(FILE *file, char *path, const int first, const int second){
+    // chuỗi về sau mình sử dụng *path thay vì path
+    char *mode = "a";// chế độ append: file mở ra chỉ để ghi. Nếu chưa có file nó sẽ tự tạo
+    // file: mở --> làm gì đó --> đóng file
+    file = fopen(path,mode);// mở file có đường dẫn là path ra để ghi file
+    fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);//viết vào file có đường dẫn là path
+    
+    fclose(file);
 }
