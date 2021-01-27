@@ -17,6 +17,7 @@ int subtract(const int first, const int second);    // trừ 2 số
 double multiply(const int first, const int second); // nhân 2 số
 float divide(const int first, const int second);    // chia 2 số
 int findMax(const int first, const int second);     // tìm max 2 số
+void printMax(const int first, const int second);
 void printCaculator(const int first, const int second);
 int main(){
     int first, second;
@@ -24,6 +25,7 @@ int main(){
     swap(&first, &second);
     //enter(first,second);
     //swap(first,second);
+    printMax(first,second);
     printCaculator(first,second);
 }
 void enter(int *first, int *second)
@@ -73,6 +75,11 @@ float divide(const int first, const int second)
 int findMax(const int first, const int second)
 {
     return (first > second) ? first : second;
+}
+void printMax(const int first, const int second)
+{
+    const int max = findMax(first, second);
+    printf("\nmax = %d", max);
 }
 void printCaculator(const int first, const int second)
 {
