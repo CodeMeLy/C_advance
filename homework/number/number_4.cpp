@@ -10,10 +10,14 @@
 #include <stdio.h>
 void enter(int *first, int *second);
 void swap(int *first, int *second);
+void enter(int &first, int &second);
+void swap(int &first, int &second);
 int main(){
     int first, second;
-    enter(&first,&second);
-    swap(&first, &second);
+    //enter(&first,&second);
+    //swap(&first, &second);
+    enter(first,second);
+    swap(first,second);
 }
 void enter(int *first, int *second)
 {   //hàm nhập sử dụng con trỏ
@@ -28,4 +32,18 @@ void swap(int *first, int *second)
     *first = *second;
     *second = temp;
     printf("\nAfter swap: %d\t%d", *first, *second);
+}
+void enter(int &first, int &second)
+{   //hàm nhập sử dụng tham chiếu
+    printf("\nEnter first number: ");
+    scanf("%d", &first);
+    printf("\nEnter second number: ");
+    scanf("%d", &second);
+}
+void swap(int &first, int &second)
+{   //hoán vị sử dụng tham chiếu
+    int temp = first;
+    first = second;
+    second = temp;
+    printf("\nAfter swap: %d\t%d", first, second);
 }
