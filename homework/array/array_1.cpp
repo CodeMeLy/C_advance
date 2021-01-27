@@ -29,15 +29,7 @@ void swap(int &first, int &second)
     first = second;
     second = temp;
 }
-void enter(int *array, int size)
-{
-    // TODO: hoàn thiện hàm nhập mảng
-    for (int i = 0; i < size; i++)
-    {
-        printf("a[%d]= ", i + 1);
-        scanf("%d", &array[i]);
-    }
-}
+// bị th
 int findMax(int *array, int size)
 {
     // TODO: hoàn thiện hàm tìm max
@@ -53,18 +45,28 @@ int findMax(int *array, int size)
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size)
 {
-    // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
-    for (int i = 0; i < first_size; i++)
-    {
-        for (int j = 0; j < second_size; j++)
-        {
-            if (first[i] == second[j])
-            {
-                return true;
+    //NOTE: kĩ thuật đặt cờ hiệu
+    //NOTE: cho một biến flag là nhận định ban đầu
+    bool flag = true;// nhạn định 2 mảng có cùng giá trị là đúng
+    //TODO: tìm cách phủ định nhạn định trên
+    //NOTE: 1. không cùng giá trị khi không cùng size
+    if(first_size!=second_size){// khác size
+        flag = false;
+    }
+    //NOTE: 2. không cùng giá trị khi cùng size, nhưng từng cặp giá trị không trùng 
+    else{// cùng size
+        // ví dụ: first: 1 2 3 4 5
+        //       second: 1 2 4 4 5
+        //        index: 0 1 2 3 4, size = 5 = first_size = second_size
+        for(int index = 0;index < first_size;index++){
+            //if(first[index]!= second[index]){ first[index] có thể viết lại *(first+index)
+             if(*(first+index)!=*(second+index)){// có thể viết lại
+                flag = false;
+                break;//thấy có 1 cặp khác nhau rồi thì không cần tìm lại nữa
+             }     
             }
         }
-    }
-    return false;
+    return flag;// trả về nhận định đó đúng hay sai
 }
 void ascSort(int *array, int size)
 {
