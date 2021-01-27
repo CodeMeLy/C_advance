@@ -33,7 +33,11 @@ void swap(int &first, int &second){
     second = Swap;
 }
 void enter(int *array, int size){
-    // TODO: hoàn thiện hàm nhập mảng
+    printf ("enter numbers:");
+    for (int i = 0; i < size;i++){
+        printf ("a[%d]=",i);
+        scanf("%d",array[i]);
+    }
 }
 int findMax(int *array, int size){
     // TODO: hoàn thiện hàm tìm max
