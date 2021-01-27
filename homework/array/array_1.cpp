@@ -40,9 +40,9 @@ void enter(int *array, int size){
     }
 }
 int findMax(int *array, int size){
-    int Max;
-    for (int i = 0;i < size;i++ ){
-        if (Max < array[i]);
+    int Max = array[0];
+    for (int i = 1;i < size;i++ ){
+        if (Max < array[i])
         Max = array[i];
     }
     return Max;
@@ -57,8 +57,8 @@ void ascSort(int *array, int size){
 // test 
 void test_findMax(){
     printf("tìm max:");
-    int array[13] = {3,3,4,2,5,6,6,43,7,5,3,6,4};
-    assert(findMax(array,13)==43);
+    int array[5] = {3,3,6,2,5};
+    assert(findMax(array,5)==6);
     printf("chính xác!\n");
 }
 void test_hasSameValues(){
