@@ -18,7 +18,10 @@ void enter(int &first, int &second){
     scanf("%d",&second);
 }
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int Swap;
+    Swap = first;
+    first = second;
+    second = Swap;
 }
 // test
 void test_enter(){
