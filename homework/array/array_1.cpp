@@ -1,4 +1,5 @@
 // TODO: hoàn thiện những nội dung có trong todo
+#define MAXSIZE 100
 #include<stdio.h>
 #include<assert.h>
 void swap(int &first, int &second);// hoán vị 2 số
@@ -16,11 +17,20 @@ int main(){
     return 0;
 }
 void enter(int &size){
-    // TODO: hoàn thiện hàm nhập vào số lượng phần tử
-
+    do {
+        printf ("enter size:");
+        scanf ("%d",&size);
+        if (size <= 0||size > MAXSIZE){
+            printf ("enter again size:");
+            scanf ("%d",&size);
+        }
+    }while (size <= 0||size > MAXSIZE);
 }
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm swap
+    int Swap;
+    Swap = first;
+    first = second;
+    second = Swap;
 }
 void enter(int *array, int size){
     // TODO: hoàn thiện hàm nhập mảng
