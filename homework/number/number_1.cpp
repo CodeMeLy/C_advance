@@ -21,8 +21,9 @@ double multiply(const int first, const int second){
     return first * second;
 }
 float divide(const int first, const int second){
-    // TODO: hoàn thiện hàm tính thương 2 số
-    return 0;
+    float Divide;
+    Divide = first/second;
+    return Divide ;
 }
 int findMax(const int first, const int second){
     // TODO: hoàn thiện hàm tìm max của 2 số
