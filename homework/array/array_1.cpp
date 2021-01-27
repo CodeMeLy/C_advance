@@ -40,8 +40,12 @@ void enter(int *array, int size){
     }
 }
 int findMax(int *array, int size){
-    // TODO: hoàn thiện hàm tìm max
-    return 0;
+    int Max;
+    for (int i = 0;i < size;i++ ){
+        if (Max < array[i]);
+        Max = array[i];
+    }
+    return Max;
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size){
     // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
