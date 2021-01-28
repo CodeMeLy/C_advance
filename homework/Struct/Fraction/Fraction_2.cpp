@@ -14,6 +14,17 @@ int main(){
 }
 void enter(Fraction &input){
     // TODO: hoàn thiện hàm nhập một phân số
+    printf("Enter the numerator: ");
+    scanf("%d", &input.numerator);
+    do
+    { //mẫu > 0
+        printf("\nEnter the denominator: ");
+        scanf("%d", &input.denominator);
+        if (input.denominator == 0)
+        {
+            printf("Enter the denomiator again!");
+        }
+    } while (input.denominator == 0);
 }
 
 void test_enter(){
