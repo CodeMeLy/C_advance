@@ -3,6 +3,7 @@
 - kiểm tra xem 3 điểm đó lập thành tam giác hay không?
 - kiểm tra xem 3 điểm đó lập thành tam giác gì?
  */
+#include<stdio.h>
 typedef struct Point{
     int x;
     int y;
@@ -24,6 +25,16 @@ void printTrianglePerimeter(const Point first, const Point second, const Point t
 void printTriangleArea(const Point first, const Point second, const Point third);// in ra diện tích tam giác
 int main(){
     Point first, second, third;
+    
     return 0;
 }
 // TODO: hoàn thiện các hàm
+void enter(Point *input){
+    printf("Enter x: ");
+    scanf("%d", &input->x);
+    printf("Enter y: ");
+    scanf("%d", &input->y);
+}
+void enter(Point *first, Point *second, Point *third){
+    
+}
