@@ -12,10 +12,16 @@ int main(){
     return 0;
 }
 void enter(int *first, int *second){
-    printf (" enter number1: ");
+    printf (" \nenter number1: ");
     scanf("%d",first);
     printf (" enter number2: ");
-    scanf ("%d",second);
+     do {
+        scanf ("%d",second);
+        if (second <= 0){
+            printf ("enter again number2:");
+            scanf ("%d",second);
+        }
+    }while (second <= 0);
 }
 void swap(int *first, int *second){
     int Swap;
