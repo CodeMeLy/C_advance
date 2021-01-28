@@ -1,4 +1,5 @@
 // TODO: hoàn thiện những nội dung có trong todo
+#define MAXSIZE 100
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -16,10 +17,21 @@ int main(){
     return 0;
 }
 void enter(int &size){
-    // TODO: hoàn thiện hàm nhập vào số lượng phần tử
+     do {
+        printf ("enter size:");
+        scanf ("%d",&size);
+        if (size <= 0||size > MAXSIZE){
+            printf ("enter again size:");
+            scanf ("%d",&size);
+        }
+    }while (size <= 0||size > MAXSIZE);
 }
 void enterValues(int *array, int size){
-    // TODO: hoàn thiện hàm nhập mảng
+    printf ("enter numbers:");
+    for (int i = 0; i < size;i++){
+        printf ("\na[%d]=",i);
+        scanf("%d",&array[i]);
+    }
 }
 void test_enter(int size){
     printf("<---> nhap vao so luong phan tu: \n");    
