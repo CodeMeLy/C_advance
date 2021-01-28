@@ -25,7 +25,7 @@ void printTrianglePerimeter(const Point first, const Point second, const Point t
 void printTriangleArea(const Point first, const Point second, const Point third);// in ra diện tích tam giác
 int main(){
     Point first, second, third;
-    
+    enter(&first,&second,&third);
     return 0;
 }
 // TODO: hoàn thiện các hàm
@@ -36,5 +36,13 @@ void enter(Point *input){
     scanf("%d", &input->y);
 }
 void enter(Point *first, Point *second, Point *third){
-    
+    printf("Enter point A: ");
+    scanf("%d", &first->x);
+    scanf("%d", &first->y);
+    printf("Enter point B: ");
+    scanf("%d", &second->x);
+    scanf("%d", &second->y);
+    printf("Enter point C: ");
+    scanf("%d", &third->x);
+    scanf("%d", &third->y);
 }
