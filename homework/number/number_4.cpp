@@ -31,9 +31,9 @@ int main(){
     char *swap_path = "./data/number/swap.out";
     char *max_path = "./data/number/max.out";
     char *caculator_path = "./data/number/caculator.out";
-    enter(&first,&second);
+    //enter(&first,&second);
     //swap(&first, &second);
-    //enter(first,second);
+    enter(first,second);
     //swap(first,second);
     //printMax(first,second);
     //printCaculator(first,second);
@@ -117,7 +117,8 @@ void exportSwap(FILE *file, char *path, int first, int second){
     char *mode = "a";
     file=fopen(path, mode);
     fprintf(file,"\ninputvalue = {first = %d, second = %d}\n",first,second);
-    swap(&first, &second);
+    //swap(&first, &second);
+    swap(first, second);
     fprintf(file,"After swap: %d\t%d", first, second);
     fclose(file);
 }
