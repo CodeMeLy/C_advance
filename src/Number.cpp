@@ -1,5 +1,5 @@
 #include<stdio.h>
-void enter(int &first, int &second);// ham nhap 2 so truyen vao tham tri
+void enter(int &first, int &second);// ham nhap 2 so truyen vao tham chieu
 int main(){
     int first,second;
     enter(first,second);
