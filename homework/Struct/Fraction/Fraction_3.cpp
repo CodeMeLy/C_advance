@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<stdlib.h>// thư viện để cấp phát
 #include<math.h>
 #include<string.h>
 #include<assert.h>
@@ -11,6 +11,8 @@ void enter(Fraction *input);// nhập phân số
 void test_enter();
 int main(){
     Fraction *fraction;
+    // vì biến fraction là con trỏ nên cần phải cấp phát bộ nhớ
+    fraction = (Fraction*)malloc(sizeof(Fraction));// cấp phát bộ nhớ
     // TODO: viết hàm enter
     enter(fraction);
     return 0;
