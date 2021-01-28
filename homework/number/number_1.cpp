@@ -26,14 +26,7 @@ float divide(const int first, const int second){
     return Divide ;
 }
 int findMax(const int first, const int second){
-    int max;
-    if (first < second){
-        max = second;
-    }
-    else if (first > second){
-        max = first;
-    }
-    return max;
+    return first>second?first:second;
 }
 // test
 void test_caculator(){
