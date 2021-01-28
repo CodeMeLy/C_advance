@@ -13,7 +13,6 @@ int main(){
     return 0;
 }
 void enter(Fraction &input){
-    // TODO: hoàn thiện hàm nhập một phân số
     printf("Enter the numerator: ");
     scanf("%d", &input.numerator);
     do

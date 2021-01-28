@@ -1,4 +1,3 @@
-//TODO: hoàn thiện thành 1 chương trình
 /* Đến hạn 23:59, 1 thg 3
 -  hàm nhập và hoán vị 2 số nguyên sử dụng con trỏ:
 -  hàm nhập và hoán vị 2 số nguyên sử dụng tham chiếu:

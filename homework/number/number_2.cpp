@@ -14,7 +14,6 @@ int main()
 }
 void enter(int *first, int *second)
 {
-    //TODO: hoàn thiện hàm enter
     printf("\nEnter first number: ");
     scanf("%d", first);
     printf("\nEnter second number: ");
@@ -22,7 +21,6 @@ void enter(int *first, int *second)
 }
 void swap(int *first, int *second)
 {
-    // TODO: hoàn thiện hàm hoán vị 2 số
     int temp = *first;
     *first = *second;
     *second = temp;

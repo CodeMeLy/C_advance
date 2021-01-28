@@ -27,7 +27,6 @@ int main(){
 }
 
 int findGcd(int first, int second){
-    // TODO: hoàn thiện hàm tìm ước số chung. Hàm trả về ước số chung của 2 số, không yêu cầu rút gọn phân số
     if(first==0||second==0){
         return first+second;
     }
@@ -42,7 +41,6 @@ int findGcd(int first, int second){
 }
 Fraction compact (Fraction fraction){
     Fraction result;
-    // TODO: hoàn thiện hàm rút gọn 1 phân số. kết quả sau khi rút gọn lưu vào biến result
     int temp = findGcd(fraction.numerator, fraction.denominator);
     result.numerator = fraction.numerator / temp;
     result.denominator = fraction.denominator / temp;
@@ -50,28 +48,24 @@ Fraction compact (Fraction fraction){
 }   
 Fraction plus(Fraction first, Fraction second){
     Fraction result;
-    //TODO: hoàn thiện hàm tính tổng 2 phân số, không yêu cầu rút gọn phân số
     result.numerator = (first.numerator * second.denominator) + (second.numerator * first.denominator);
     result.denominator = first.denominator * second.denominator;
     return result;
 }
 Fraction minus(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm hiệu 2 phân só, không yêu càu rút gọn phân số
     result.numerator = (first.numerator * second.denominator) - (second.numerator * first.denominator);
     result.denominator = first.denominator * second.denominator;
     return result;
 }
 Fraction multiply(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm nhân 2 phân số, không yêu cầu rút gọn phân số
     result.numerator = first.numerator * second.numerator;
     result.denominator = first.denominator * second.denominator;
     return result;
 }
 Fraction divide(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm chia 2 phân số, không yêu cầu rút gọn phân số
     result.numerator = first.numerator * second.denominator;
     result.denominator = first.denominator * second.numerator;
     return result;
@@ -82,7 +76,6 @@ Fraction divide(Fraction first, Fraction second){
  * - nếu phân số thứ 1 nhỏ hơn phân số thứ 2. trả về SMALLER
  **/
 CompareResult compare(Fraction first, Fraction second){
-    // TODO: hoàn thiện hàm so sánh 2 phân số
     CompareResult result = EQUAL;
     if(first.numerator*second.denominator > first.denominator*second.numerator){
         result = LARGER;

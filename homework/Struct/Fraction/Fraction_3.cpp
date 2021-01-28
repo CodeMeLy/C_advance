@@ -13,12 +13,10 @@ int main(){
     Fraction *fraction;
     // vì biến fraction là con trỏ nên cần phải cấp phát bộ nhớ
     fraction = (Fraction*)malloc(sizeof(Fraction));// cấp phát bộ nhớ
-    // TODO: viết hàm enter
     enter(fraction);
     return 0;
 }
 void enter(Fraction *input){
-    // TODO: hoàn thiện hàm nhập một phân số
     printf("Enter the numerator: ");
     scanf("%d", &input->numerator);
     do
