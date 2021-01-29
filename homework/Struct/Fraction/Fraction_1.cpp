@@ -27,32 +27,47 @@ int main(){
 }
 
 int  gcd(int first, int second){
-    // TODO: hoàn thiện hàm tìm ước số chung. Hàm trả về ước số chung của 2 số, không yêu cầu rút gọn phân số
-    return 0;
+   while (first*second != 0){ 
+        if (first > second){
+            first %= second;
+        }
+        else{
+            second %= first;
+        }
+    }
+    return first + second;
 }
 Fraction compact (Fraction fraction){
     Fraction result;
-    // TODO: hoàn thiện hàm rút gọn 1 phân số. kết quả sau khi rút gọn lưu vào biến result
+    //denominator:mẫu số
+    //numerator:tử số
+    int temp = gcd (fraction.numerator,fraction.denominator);
+    result.numerator = fraction.numerator/ temp;
+    result.denominator = fraction.denominator/ temp;
     return result;
 }   
 Fraction plus(Fraction first, Fraction second){
     Fraction result;
-    //TODO: hoàn thiện hàm tính tổng 2 phân số, không yêu cầu rút gọn phân số, không yêu cầu rút gọn phân số
+    result.numerator = (first.numerator * second.denominator) + (second.numerator * first.denominator);
+    result.denominator = first.denominator * second.denominator;
     return result;
 }
 Fraction minus(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm hiệu 2 phân só, không yêu càu rút gọn phân số
+    result.numerator = (first.numerator * second.denominator) - (second.numerator * first.denominator);
+    result.denominator = first.denominator * second.denominator;
     return result;
 }
 Fraction multiply(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm nhân 2 phân số, không yêu cầu rút gọn phân số
+    result.numerator = first.numerator*second.numerator;
+    result.denominator = first.denominator*second.denominator;
     return result;
 }
 Fraction divide(Fraction first, Fraction second){
     Fraction result;
-    // TODO: hoàn thiện hàm chia 2 phân số, không yêu cầu rút gọn phân số
+    result.numerator = first.numerator/second.numerator;
+    result.denominator = first.denominator/second.denominator;
     return result;
 }
 /** hàm so sánh tương quan của hai phân số:
@@ -61,8 +76,15 @@ Fraction divide(Fraction first, Fraction second){
  * - nếu phân số thứ 1 nhỏ hơn phân số thứ 2. trả về SMALLER
  **/
 CompareResult compare(Fraction first, Fraction second){
-    // TODO: hoàn thiện hàm so sánh 2 phân số
     return EQUAL;
+    CompareResult result = EQUAL;
+    if(first.numerator*second.denominator > first.denominator*second.numerator){
+        result = LARGER;
+    }
+    else if(first.numerator*second.denominator < first.denominator*second.numerator){
+        result = SMALLER;
+    }
+    return result;
 }
 void test_compare(){
     printf("<---> so sánh 2 phân số: \n");
