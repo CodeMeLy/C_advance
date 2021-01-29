@@ -48,11 +48,33 @@ int findMax(int *array, int size){
     return Max;
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size){
-    // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
-    return false;
+    // đặt một biến là flag cho hàm trả về bool. đây là kĩ thuật đặt cờ hiệu
+    bool flag = true;//mình khẳng định 2 mảng giống nhau.
+    // đi phản biện trường hợp flag = false
+    // hai mảng giống giá trị
+    // đầu tiên phải cùng size. đúng không?
+    // nếu khác size thì phủ định đúng không? đr
+    if(first_size != second_size){
+        flag = false;
+    } else{
+        // cùng szie thì mình đi từng cặp phần tử xem giống nhau hay không? hieur k
+        // đi từ đầu đến cuối
+        //TODO: làm tiếp nhé
+    }
+    return flag;// trả về nhận định
 }
-void ascSort(int *array, int size){
+void ascSort(int *array, int size){    
     // TODO: hoàn thiện hàm sắp xếp một mảng
+    int temp = array[0];
+    for (int i = 0;i < size;i++){
+        for (int j = i+1;j < size - 1;j++){
+            if (array[i] > array[j]){
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
 }
 // test 
 void test_findMax(){
