@@ -60,11 +60,17 @@ bool hasSameValues(int *first, int first_size, int *second, int second_size){
         // cùng szie thì mình đi từng cặp phần tử xem giống nhau hay không? hieur k
         // đi từ đầu đến cuối
         //TODO: làm tiếp nhé
+        for (int i = 0;i < first_size;i++){
+            for (int j = 0;j < second_size;j++){
+                if (first[i] == second[j]){
+                    flag = true;
+                }
+            }
+        }      
     }
     return flag;// trả về nhận định
 }
 void ascSort(int *array, int size){    
-    // TODO: hoàn thiện hàm sắp xếp một mảng
     int temp = array[0];
     for (int i = 0;i < size;i++){
         for (int j = i+1;j < size - 1;j++){
