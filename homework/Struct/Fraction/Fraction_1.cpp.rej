@@ -1,0 +1,9 @@
+diff a/homework/Struct/Fraction/Fraction_1.cpp b/homework/Struct/Fraction/Fraction_1.cpp	(rejected hunks)
+@@ -51,6 +51,7 @@
+ Fraction plus(Fraction first, Fraction second){
+     Fraction result;
+     //TODO: hoàn thiện hàm tính tổng 2 phân số, không yêu cầu rút gọn phân số
++    result.numerator = (first_fraction.numerator * second_fraction.denominator) + (second_fraction.numerator * first_fraction.denominator);
+     result.denominator = first_fraction.denominator * second_fraction.denominator;
+     return result;
+ }

@@ -1,4 +1,3 @@
-// TODO: hoàn thiện những nội dung có trong todo
 #define MAXSIZE 100
 #include<stdio.h>
 #include<stdlib.h>

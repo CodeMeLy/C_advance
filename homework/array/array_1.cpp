@@ -1,4 +1,4 @@
-// TODO: hoàn thiện những nội dung có trong todo
+
 #define MAXSIZE 100
 #include<stdio.h>
 #include<assert.h>
@@ -59,7 +59,6 @@ bool hasSameValues(int *first, int first_size, int *second, int second_size){
     } else{
         // cùng szie thì mình đi từng cặp phần tử xem giống nhau hay không? hieur k
         // đi từ đầu đến cuối
-        //TODO: làm tiếp nhé
         for (int i = 0;i < first_size;i++){
             for (int j = 0;j < second_size;j++){
                 if (first[i] == second[j]){
