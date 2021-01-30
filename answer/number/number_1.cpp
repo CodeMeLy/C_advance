@@ -15,21 +15,28 @@ int add(const int first, const int second){
     return first + second;
 }
 int subtract(const int first, const int second){
-    // TODO: hoàn thiện hàm tính hiệu 2 số
+    return first - second;
     return 0;
 }
 double multiply(const int first, const int second){
-    // TODO: hoàn thiện hàm tính tích 2 số
+    return first*second;
     return 0;
 }
 float divide(const int first, const int second){
-    // TODO: hoàn thiện hàm tính thương 2 số
+    return first/second;
     return 0;
 }
 int findMax(const int first, const int second){
-    // TODO: hoàn thiện hàm tìm max của 2 số
-    return 0;
+    float max = 0;
+    if(first > second){
+        max = first;
+    }
+    else{
+        max = second;
+        }
+    return max;
 }
+
 // test
 void test_caculator(){
     printf("phép tính: \n");
