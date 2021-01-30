@@ -12,7 +12,7 @@ int main(){
 }
 
 void enterMoney(float *input){
-    printf("Enter amount of money: ");
+    printf("Enter the amount of money: ");
     scanf("%f", &input);
 }
 
@@ -22,5 +22,9 @@ void enterExchangeRate(float *input){
 }
 
 float transfer(const float money, const float exchange_rate){
-    return 
+    return money*exchange_rate;
+}
+
+void printTransferValue(const float money, const float exchange_rate){
+    printf("The amount of money converted: %f", transfer(money, exchange_rate));
 }
