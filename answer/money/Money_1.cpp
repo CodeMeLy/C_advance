@@ -16,12 +16,12 @@ int main(){
 
 void enterMoney(float *input){
     printf("Enter the amount of money: ");
-    scanf("%f", &input);
+    scanf("%f", input);
 }
 
 void enterExchangeRate(float *input){
     printf("Enter exchange rate: ");
-    scanf("%f", &input);
+    scanf("%f", input);
 }
 
 float transfer(const float money, const float exchange_rate){
