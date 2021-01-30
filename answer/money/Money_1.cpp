@@ -7,7 +7,10 @@ float transfer(const float money, const float exchange_rage);// chuyển đổi 
 void printTransferValue(const float money, const float exchange_rage);// in ra giá trị sau khi chuyển đổi
 void menu(const float money, const float exchange_rage);// hàm menu
 int main(){
-    float money,exchange_rage;
+    float money,exchange_rate;
+    enterMoney(&money);
+    enterExchangeRate(&exchange_rate);
+    printTransferValue(money,exchange_rate);
     return 0;
 }
 
