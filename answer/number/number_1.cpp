@@ -23,7 +23,7 @@ double multiply(const int first, const int second){
     return 0;
 }
 float divide(const int first, const int second){
-    return first/second;
+    return (float)first/second;
     return 0;
 }
 int findMax(const int first, const int second){
