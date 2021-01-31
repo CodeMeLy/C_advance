@@ -16,7 +16,8 @@ void enterMoney(float *input){
     scanf("%f",input);
 }
 void enterExchangeRate(float *input){
-    printf("Enter exchange rate: ");
+    printf("note: 1 $ = 23028.63 VND\n1 VND = 0.000043 $");
+    printf("\nEnter exchange rate: ");
     scanf("%f",input);
 }
 float transfer(const float money, const float exchange_rate){
