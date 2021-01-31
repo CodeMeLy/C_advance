@@ -13,7 +13,7 @@ int main(){
     printTransferValue(money,exchange_rate);
     return 0;
 }
-
+    
 void enterMoney(float *input){
     printf("Enter the amount of money: ");
     scanf("%f", input);
