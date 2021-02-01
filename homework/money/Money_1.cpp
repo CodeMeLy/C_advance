@@ -3,12 +3,12 @@ void enterMoney(float *input);// nhập số tiền
 void enterExchangeRate(float *input);// nhập tỉ giá
 float transfer(const float money, const float exchange_rate);// chuyển đổi tiền
 void printTransferValue(const float money, const float exchange_rate);// in ra giá trị sau khi chuyển đổi
-void menu(const float money, const float exchange_rate);// hàm menu
+void menu(float money, float exchange_rate);// hàm menu
 int main(){
     float money,exchange_rate;
-    enterMoney(&money);
-    enterExchangeRate(&exchange_rate);
     menu(money,exchange_rate);
+    // enterMoney(&money);
+    // enterExchangeRate(&exchange_rate);
     return 0;
 }
 void enterMoney(float *input){
@@ -26,7 +26,7 @@ float transfer(const float money, const float exchange_rate){
 void printTransferValue(const float money, const float exchange_rate){
     printf("kết quả: %.2f",transfer(money, exchange_rate));
 }
-void menu(const float money, const float exchange_rate){
+void menu(float money, float exchange_rate){
     int choise;
     do{
         printf("\n1. Convert VND to USD");
@@ -37,9 +37,13 @@ void menu(const float money, const float exchange_rate){
         switch (choise)
         {
         case 1:
+            enterMoney(&money);
+            enterExchangeRate(&exchange_rate);
             printf("\nYour money: %.3f $",transfer(money,exchange_rate));
             break;
         case 2:
+            enterMoney(&money);
+            enterExchangeRate(&exchange_rate);
             printf("\nYour money: %.3f VND",transfer(money,exchange_rate));
             break;
         default:
