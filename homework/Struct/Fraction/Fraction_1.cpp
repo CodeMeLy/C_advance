@@ -64,10 +64,10 @@ Fraction multiply(Fraction first, Fraction second){
     result.denominator = first.denominator*second.denominator;
     return result;
 }
-Fraction divide(Fraction first, Fraction second){
+Fraction divide(Fraction first, Fraction second){// hàm này sai
     Fraction result;
-    result.numerator = first.numerator/second.numerator;
-    result.denominator = first.denominator/second.denominator;
+    result.numerator = first.numerator*second.denominator;
+    result.denominator = first.denominator*second.numerator;
     return result;
 }
 /** hàm so sánh tương quan của hai phân số:
@@ -75,8 +75,7 @@ Fraction divide(Fraction first, Fraction second){
  * - nếu phân số thứ 1 lớn hơn phân số thứ 2. trả về LARGER
  * - nếu phân số thứ 1 nhỏ hơn phân số thứ 2. trả về SMALLER
  **/
-CompareResult compare(Fraction first, Fraction second){
-    return EQUAL;
+CompareResult compare(Fraction first, Fraction second){ // hàm này sai
     CompareResult result = EQUAL;
     if(first.numerator*second.denominator > first.denominator*second.numerator){
         result = LARGER;
