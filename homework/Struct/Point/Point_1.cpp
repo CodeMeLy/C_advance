@@ -4,6 +4,7 @@
 - kiểm tra xem 3 điểm đó lập thành tam giác gì?
  */
 #include<stdio.h>
+#include<stdlib.h>
 typedef struct Point{
     int x;
     int y;
@@ -30,19 +31,16 @@ int main(){
 }
 // TODO: hoàn thiện các hàm
 void enter(Point *input){
-    printf("Enter x: ");
+    printf("x: ");
     scanf("%d", &input->x);
-    printf("Enter y: ");
+    printf("y: ");
     scanf("%d", &input->y);
 }
 void enter(Point *first, Point *second, Point *third){
-    printf("Enter point A: ");
-    scanf("%d", &first->x);
-    scanf("%d", &first->y);
-    printf("Enter point B: ");
-    scanf("%d", &second->x);
-    scanf("%d", &second->y);
-    printf("Enter point C: ");
-    scanf("%d", &third->x);
-    scanf("%d", &third->y);
+    printf("Enter point A:\n ");
+    enter(first); // gọi lại hàm, không cần viết lại
+    printf("Enter point B:\n ");
+    enter(second);
+    printf("Enter point C:\n ");
+    enter(third);
 }
