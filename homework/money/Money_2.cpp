@@ -26,3 +26,11 @@ void enter(double *money){
         }
     }while(!isValid(*money));
 }
+int countNumbersOfWaysToDivide(const double money){
+    int count;
+    int moneyChange[3]={5000, 2000, 1000};
+    for(int i=0;i<3;i++){
+        count=money/moneyChange[i];
+        
+    }
+}
