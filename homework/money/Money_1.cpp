@@ -12,7 +12,7 @@ int main(){
     return 0;
 }
 void enterMoney(float *input){
-    printf("nhap vao gia tri can doi:");
+    printf("Enter amount of money you want to convert: ");
     scanf("%f",input);
 }
 void enterExchangeRate(float *input){
@@ -25,7 +25,7 @@ float transfer(const float money, const float exchange_rate){
     return money*exchange_rate;
 }
 void printTransferValue(const float money, const float exchange_rate){
-    printf("\nThanh tien:%.2f USD",transfer(money,exchange_rate));
+    printf("\nmoney:%.2f USD",transfer(money,exchange_rate));
 }
 void menu(const float money, const float exchange_rate){
     int choise;
