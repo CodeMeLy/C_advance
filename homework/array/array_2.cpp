@@ -16,7 +16,7 @@ int main(){
     return 0;
 }
 void enter(int &size){
-    // TODO: hoàn thiện hàm nhập vào số lượng phần tử
+    
 }
 void enterValues(int *array, int size){
     // TODO: hoàn thiện hàm nhập mảng

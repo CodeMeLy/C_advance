@@ -2,6 +2,7 @@
 1.viết hàm nhập vào USD và tìm ra VND
 2.viết hàm nhập vào VND và tìm ra USD */
 #include<stdio.h>
+enum Option{VND_TO_USD = 1, USD_TO_VND = 2};
 void enterMoney(float *input);// nhập số tiền
 void enterExchangeRate(float *input);// nhập tỉ giá
 float transfer(const float money, const float exchange_rate);// chuyển đổi tiền
@@ -28,4 +29,23 @@ float transfer(const float money, const float exchange_rate){
 }
 void printTransferValue(const float money, const float exchange_rate){
     printf("kết quả: %.2f",transfer(money, exchange_rate));
+}
+void menu(const float money, const float exchange_rate){
+    int option = VND_TO_USD;
+    printf("nhan phim 1 de chuyen tu usd sang VND, phim 2 de chuyen tu vnd sang USD:");
+    scanf("%d",&option);
+    switch(option){
+        case USD_TO_VND:
+            printf("tu usd sang vnd:");
+            printTransferValue(money, exchange_rate);
+            break;
+        case VND_TO_USD:
+            printf("tu vnd sang usd:");
+            printTransferValue(money, exchange_rate);
+            break;
+        default:
+            printf("lua chon khong hop le!!!");
+            break;
+    }
+
 }

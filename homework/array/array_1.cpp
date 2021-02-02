@@ -3,6 +3,7 @@
 #include<assert.h>
 void swap(int &first, int &second);// hoán vị 2 số
 int findMax(int *array, int size);// tìm max của mảng
+int findMin(int *array, int size);// tìm min của mảng
 bool hasSameValues(int *first, int first_size, int *second, int second_size);// kiểm tra giá trị của 2 mảng có tương tự nhau hay không?
 void ascSort(int *array, int size);// sắp xếp tăng dần một mảng
 // test function
@@ -16,22 +17,61 @@ int main(){
     return 0;
 }
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm swap
+    int temp = first;
+    first = second;
+    second = temp;    
 }
 void enter(int *array, int size){
     // TODO: hoàn thiện hàm nhập mảng
 }
-int findMax(int *array, int size){
-    // TODO: hoàn thiện hàm tìm max
-    return 0;
+int findMax(int *array, int size){// 1 2 3
+    int max = *array;// max ban đầu *(array + 0) = array[0]
+    for(int index = 1; index < size;index++){
+    if(*(array + index)>max){
+        max = *(array + index);
+        }
+    }
+    return max;
+}
+int findMin(int *array, int size){// 1 2 3
+    int min = *array;
+    for(int index = 1; index < size;index++){
+    if(*(array + index)<min){
+        min = *(array + index);
+        }
+    }
+    return min;
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size){
+    bool flag = true;
     // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
-    return false;
+    // so luong, gia tri
+    if(first_size!=second_size){
+        flag = false;
+    }
+    else{
+        // 2 3 4 5 6 7 8 9
+        // 2 3 4 5 5 5 4 3
+        for(int current=0;current<first_size;current++){
+            if(*(first+current)!=*(second+current)){
+                flag = false;
+                break;
+            }
+        }
+    }
+    return flag;
 }
 void ascSort(int *array, int size){
     // TODO: hoàn thiện hàm sắp xếp một mảng
+    for(int current=0;current<size; current++){
+        for(int next = current+1; next<size; next++){
+            if(*(array+current)>*(array+next)){
+                swap(*(array+current),*(array+next));
+            }
+        }
+    }
 }
+
 // test 
 void test_findMax(){
     printf("tìm max:");
