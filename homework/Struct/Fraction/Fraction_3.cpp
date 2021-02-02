@@ -16,4 +16,5 @@ int main(){
 }
 void enter(Fraction *input){
     // TODO: hoàn thiện hàm nhập một phân số
+    
 }
