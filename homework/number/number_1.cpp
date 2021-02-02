@@ -13,43 +13,20 @@ int main(){
 }
 int add(const int first, const int second){
     // TODO: hoàn thiện hàm tính tổng 2 số
-    printf("enter first number: ");
-    scanf("%d",&first);
-    printf("enter second number: ");
-    scanf("%d",&second);
-    int sum=first+second;
-    printf("%d",sum);
-    return 0;
+    return first+second;
 }
 int subtract(const int first, const int second){
     // TODO: hoàn thiện hàm tính hiệu 2 số
-    printf("enter first number: ");
-    scanf("%d",&first);
-    printf("enter second number: ");
-    scanf("%d",&second);
-    int subtract=first-second;
-    printf("%d",subtract);
-    return 0;
+    return first-second;
 }
 double multiply(const int first, const int second){
     // TODO: hoàn thiện hàm tính tích 2 số
-    printf("enter first number: ");
-    scanf("%d",&first);
-    printf("enter second number: ");
-    scanf("%d",&second);
-    int multiply=first*second;
-    printf("%d",multiply);
-    return 0;
+    return first*second;
 }
 float divide(const int first, const int second){
     // TODO: hoàn thiện hàm tính thương 2 số
-    printf("enter first number: ");
-    scanf("%d",&first);
-    printf("enter second number: ");
-    scanf("%d",&second);
     float divide=first/second;
-    printf("%d",multiply);
-    return 0;
+    return divide;
 }
 int findMax(const int first, const int second){
     // TODO: hoàn thiện hàm tìm max của 2 số
