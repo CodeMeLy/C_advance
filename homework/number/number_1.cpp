@@ -25,22 +25,12 @@ double multiply(const int first, const int second){
 }
 float divide(const int first, const int second){
     // TODO: hoàn thiện hàm tính thương 2 số
-    float divide=first/second;
+    float divide=(float)first/second;
     return divide;
 }
 int findMax(const int first, const int second){
     // TODO: hoàn thiện hàm tìm max của 2 số
-    printf("enter first number: ");
-    scanf("%d",&first);
-    printf("enter second number: ");
-    scanf("%d",&second);
-    if(first>second){
-        printf("max is: ",first);
-    }
-    else{
-         printf("max is: ",second);
-    }
-    return 0;
+    return first>second?first:second;
 }
 // test
 void test_caculator(){
