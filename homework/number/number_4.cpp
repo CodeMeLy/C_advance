@@ -20,10 +20,17 @@ int subtract(const int first, const int second);
 double multiply(const int first, const int second);
 float divide(const int first, const int second);
 int findMax(const int first, const int second);
-
+int printValue(const int first,const int second);
+void exportInputValue(FILE *file, char *path, const int first, const int second);
 
 int main (){
-    
+    int first, second;
+    FILE *file;
+    char *input_path = "./data/number/inputvalue.out";
+    enter(&first,&second);
+    swap(&first, &second);
+    printValue(first,second);
+    exportInputValue(file,input_path,first,second);
     return 0;
 }
 void enter(int *first,int *second){
@@ -34,9 +41,9 @@ void enter(int *first,int *second){
 }
 void swap (int *first,int *second){
     int Swap;
-    Swap = first;
-    first = second;
-    second = Swap;
+    Swap = *first;
+    *first = *second;
+    *second = Swap;
 }
 void enter(int &first,int &second){
     printf ("enter number1: ");
@@ -66,4 +73,14 @@ float divide(const int first, const int second){
 }
 int findMax(const int first, const int second){
     return first>second?first:second;
+}
+int printValue(const int first,const int second){
+    printf("add:%d ,subtract: %d ,multiply:%.2f ,divide:%.2f ",add(first,second),subtract(first,second),multiply(first,second),divide(first,second));
+}
+
+void exportInputValue(FILE *file, char *path, const int first, const int second){
+    char *mode = "a";
+    file = fopen(path,mode);
+    fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);
+    fclose(file);
 }
