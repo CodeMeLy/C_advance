@@ -13,9 +13,16 @@ int main(){
 }
 void enter(int &first, int &second){
     // TODO: hoàn thiện hàm nhập 2 số
+    printf("enter first number: ");
+    scanf("%d",&first);
+    printf("enter second number: ");
+    scanf("%d",&second);
 }
 void swap(int &first, int &second){
     // TODO: hoàn thiện hàm hoán vị 2 số
+    int temp=first;
+    first=second;
+    second=temp;
 }
 // test
 void test_enter(){
