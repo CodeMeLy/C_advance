@@ -4,6 +4,7 @@
 - kiểm tra xem 3 điểm đó lập thành tam giác gì?
  */
 #include<stdio.h>
+#include<math.h>
 #include<stdlib.h>
 typedef struct Point{
     int x;
@@ -11,7 +12,7 @@ typedef struct Point{
 };
 void enter(Point *input);// nhập vào 1 điểm
 void enter(Point *first, Point *second, Point *third);// nhập vào 3 đỉnh của tam giác
-void findDistance(const Point first, const Point second);// tính khoảng cách 2 điểm
+double findDistance(const Point first, const Point second);// tính khoảng cách 2 điểm
 void findTrianglePerimeter(const Point first, const Point second, const Point third);// tính chu vi tam giác
 void findTriangleArea(const Point first, const Point second, const Point third);// tính diện tích tam giác
 void canFormEgdeOfTriAngle(const Point first, const Point second);// 2 điểm có thể tạo thành một cạnh tam giác?
@@ -43,4 +44,9 @@ void enter(Point *first, Point *second, Point *third){
     enter(second);
     printf("Enter point C:\n ");
     enter(third);
+}
+double findDistance(const Point first, const Point second){
+    double distance;
+    distance = sqrt((double)(first.x-second.x)*(first.x-second.x)+(first.y-second.y)*(first.y-second.y));
+    return distance;
 }
