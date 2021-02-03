@@ -29,6 +29,7 @@ int main(){
     Point first, second, third;
     enter(&first,&second,&third);
     findTrianglePerimeter(first,second,third);
+    findTriangleArea(first,second,third);
     return 0;
 }
 // TODO: hoàn thiện các hàm
@@ -55,4 +56,9 @@ void findTrianglePerimeter(const Point first, const Point second, const Point th
     double AB=findDistance(first,second), AC=findDistance(first,third), BC=findDistance(second,third);
     printf("\nAB= %.2lf\tAC= %.2lf\tBC= %.2lf",AB,AC,BC);
     printf("\nPerimeter of triangle is: %.2lf",AB+AC+BC);
+}
+void findTriangleArea(const Point first, const Point second, const Point third){
+    double p=(findDistance(first,second)+findDistance(first,third)+findDistance(second,third))/2.0;
+    double S=sqrt((double)p*(p-findDistance(first,second))*(p-findDistance(first,third))*(p-findDistance(second,third)));
+    printf("\nArea of triagle is: %.2lf", S);
 }
