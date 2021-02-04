@@ -18,8 +18,7 @@ int subtract(const int first, const int second){
     return first - second;
 }
 double multiply(const int first, const int second){
-    // TODO: hoàn thiện hàm tính tích 2 số
-    return 0;
+    return first * second;//F4
 }
 float divide(const int first, const int second){
     // TODO: hoàn thiện hàm tính thương 2 số
