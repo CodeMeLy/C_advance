@@ -89,17 +89,17 @@ bool isEquilateralTriangle(const Point first, const Point second, const Point th
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)&&AB==AC&&AC==BC&&AB==BC;
+    return AB==AC&&AC==BC&&AB==BC;
 }
 bool isIsoscelesTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)&&(AB==AC||AC==BC||AB==BC);
+    return AB==AC||AC==BC||AB==BC;
 }
 bool isRightTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)&&(AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC));
+    return AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC);
 }
