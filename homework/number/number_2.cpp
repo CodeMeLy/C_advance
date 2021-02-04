@@ -19,7 +19,9 @@ void enter(int *first, int *second){
     // em làm bài này đi
 }
 void swap(int *first, int *second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int temp = *first;
+    *first = *second;
+    *second = temp;
 }
 void test_enter(){
     int first = 0, second = 0;
