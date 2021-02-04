@@ -15,8 +15,8 @@ void enter(Point *first, Point *second, Point *third);// nhập vào 3 đỉnh c
 double findDistance(const Point first, const Point second);// tính khoảng cách 2 điểm
 double findTrianglePerimeter(const Point first, const Point second, const Point third);// tính chu vi tam giác
 double findTriangleArea(const Point first, const Point second, const Point third);// tính diện tích tam giác
-void canFormEgdeOfTriAngle(const Point first, const Point second);// 2 điểm có thể tạo thành một cạnh tam giác?
-void isPointOfTriAngle(const Point first, const Point second, const Point third);// là 3 đỉnh của tam giác?
+bool canFormEgdeOfTriAngle(const Point first, const Point second);// 2 điểm có thể tạo thành một cạnh tam giác?
+bool isPointOfTriAngle(const Point first, const Point second, const Point third);// là 3 đỉnh của tam giác?
 bool isEquilateralTriangle(const Point first, const Point second, const Point third);// là tam giác đều
 bool isIsoscelesTriangle(const Point first, const Point second, const Point third);// là tam giác cân
 bool isRightTriangle(const Point first, const Point second, const Point third);// là tam giác vuông
@@ -59,7 +59,6 @@ double findTrianglePerimeter(const Point first, const Point second, const Point 
     return AB + AC + BC;
 }
 double findTriangleArea(const Point first, const Point second, const Point third){
-    // sửa lại nhé
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
@@ -73,4 +72,13 @@ void printTrianglePerimeter(const Point first, const Point second, const Point t
 void printTriangleArea(const Point first, const Point second, const Point third){
     double triagle_area = findTriangleArea(first,second,third);
     printf("triangle area = %lf\n",triagle_area);
+}
+bool canFormEgdeOfTriAngle(const Point first, const Point second){
+    return findDistance(first,second)!=0;
+}
+bool isPointOfTriAngle(const Point first, const Point second, const Point third){
+    double AB = findDistance(first,second);
+    double AC = findDistance(first,third);
+    double BC = findDistance(second,third);
+    return AB+AC > BC;
 }
