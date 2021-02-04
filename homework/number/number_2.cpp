@@ -12,7 +12,11 @@ int main(){
     return 0;
 }
 void enter(int *first, int *second){
-    //TODO: hoàn thiện hàm enter
+    printf("enter first number:");
+    scanf("%d",first);
+    printf("enter second number");
+    scanf("%d",second);
+    // em làm bài này đi
 }
 void swap(int *first, int *second){
     // TODO: hoàn thiện hàm hoán vị 2 số
