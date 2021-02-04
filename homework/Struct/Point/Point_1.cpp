@@ -82,13 +82,17 @@ void printTrianglePerimeter(const Point first, const Point second, const Point t
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
+    if(canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)){
     printf("AB= %.3lf\tAC= %.3lf\tBC= %.3lf\n",AB,AC,BC);
     double triagle_perimeter = findTrianglePerimeter(first,second,third);
     printf("triangle perimeter = %.3lf\n",triagle_perimeter);
+    }
 }
 void printTriangleArea(const Point first, const Point second, const Point third){
+    if(canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)){
     double triagle_area = findTriangleArea(first,second,third);
     printf("triangle area = %.3lf\n",triagle_area);
+    }
 }
 bool canFormEgdeOfTriAngle(const Point first, const Point second){
     return findDistance(first,second)!=0;//độ dài 1 cạnh khác 0
@@ -136,5 +140,7 @@ void typeOfTriangle(const Point first, const Point second, const Point third){
         }else{
             printf("This is normal triangle\n");
         }
+    }else{
+        printf("This is not a triangle!\n");
     }
 }
