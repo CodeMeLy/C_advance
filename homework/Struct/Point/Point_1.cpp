@@ -23,12 +23,14 @@ bool isRightTriangle(const Point first, const Point second, const Point third);/
 bool isRightIsoscelesTriangle(const Point first, const Point second, const Point third);// là tam giác vuông cân 
 void print(const Point output);// in ra 1 điểm
 void print(const Point first, const Point second, const Point third);// in ra 3 điểm tam giác
+void typeOfTriangle(const Point first, const Point second, const Point third);//là tam giác gì
 void printTrianglePerimeter(const Point first, const Point second, const Point third);// in ra chu vi tam giác
 void printTriangleArea(const Point first, const Point second, const Point third);// in ra diện tích tam giác
 int main(){
     Point first, second, third;
     enter(&first,&second,&third);
     print(first,second,third);
+    typeOfTriangle(first,second,third);
     printTrianglePerimeter(first, second, third);
     printTriangleArea(first,second,third);
     return 0;
@@ -120,4 +122,19 @@ bool isRightIsoscelesTriangle(const Point first, const Point second, const Point
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
     return (AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC))&&(AB==AC||AC==BC||AB==BC);
+}
+void typeOfTriangle(const Point first, const Point second, const Point third){
+    if(canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)){
+        if(isEquilateralTriangle(first,second,third)){
+            printf("This is equilateral triangle\n");
+        }else if(isIsoscelesTriangle(first,second,third)){
+            printf("This is isosceles triangle\n");
+        }else if(isRightTriangle(first,second,third)){
+            printf("This is right triangle\n");
+        }else if(isRightIsoscelesTriangle(first,second,third)){
+            printf("This is right isosceles triangle\n");
+        }else{
+            printf("This is normal triangle\n");
+        }
+    }
 }
