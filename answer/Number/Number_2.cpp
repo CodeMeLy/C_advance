@@ -6,7 +6,7 @@ void test_swap();
 int main(){
     test_swap();
     return 0;
-}// dòng mới nè VY
+}
 void swap(int *first, int *second){
     int temp = *first;// *first: lấy giá trị của con trỏ first
     *first = *second;
