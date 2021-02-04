@@ -119,7 +119,7 @@ bool isRightTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC);// TODO: sử dụng pow trong math.h cho gọn nhé
+    return pow(AB,2)==pow(AC,2)+pow(BC,2)||pow(AC,2)==pow(AB,2)+pow(BC,2)||pow(BC,2)==pow(AB,2)+pow(AC,2);
 }
 bool isRightIsoscelesTriangle(const Point first, const Point second, const Point third){
     return isIsoscelesTriangle(first,second,third) && isRightTriangle(first,second,third);// là tam giác vuông, vừa là tam giác cân    
