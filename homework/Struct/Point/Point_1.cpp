@@ -51,8 +51,7 @@ double findDistance(const Point first, const Point second){
     double distance = sqrt((double)(first.x-second.x)*(first.x-second.x)+(first.y-second.y)*(first.y-second.y));//NOTE: khởi gán luôn nhé
     return distance;
 }
-double findTrianglePerimeter(const Point first, const Point second, const Point third){// NOTE: có những chỗ a có thể sai nên sửa lại nhé
-    // NOTE: đưa xuống cho dễ đọc nhé
+double findTrianglePerimeter(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
@@ -62,25 +61,29 @@ double findTriangleArea(const Point first, const Point second, const Point third
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    double triagle_perimeter = findTrianglePerimeter(first,second,third)/2;
-    return sqrt(triagle_perimeter*(triagle_perimeter-AB)*(triagle_perimeter-AC)*(triagle_perimeter-BC));
+    double triagle_perimeter = findTrianglePerimeter(first,second,third)/2;//Nửa chu vi
+    return sqrt(triagle_perimeter*(triagle_perimeter-AB)*(triagle_perimeter-AC)*(triagle_perimeter-BC));//công thức Heron
 }
 void printTrianglePerimeter(const Point first, const Point second, const Point third){
+    double AB = findDistance(first,second);
+    double AC = findDistance(first,third);
+    double BC = findDistance(second,third);
+    printf("AB= %.3lf\tAC= %.3lf\tBC= %.3lf\n",AB,AC,BC);
     double triagle_perimeter = findTrianglePerimeter(first,second,third);
-    printf("triangle perimeter = %lf\n",triagle_perimeter);
+    printf("triangle perimeter = %.3lf\n",triagle_perimeter);
 }
 void printTriangleArea(const Point first, const Point second, const Point third){
     double triagle_area = findTriangleArea(first,second,third);
-    printf("triangle area = %lf\n",triagle_area);
+    printf("triangle area = %.3lf\n",triagle_area);
 }
 bool canFormEgdeOfTriAngle(const Point first, const Point second){
-    return findDistance(first,second)!=0;
+    return findDistance(first,second)!=0;//độ dài 1 cạnh khác 0
 }
 bool isPointOfTriAngle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return AB+AC > BC;
+    return AB+AC > BC;//tổng 2 cạnh luôn lớn hơn cạnh còn lại
 }
 bool isEquilateralTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
