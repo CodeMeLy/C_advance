@@ -26,7 +26,7 @@ void exportInputValue(FILE *file, char *path, const int first, const int second)
 int main (){
     int first, second;
     FILE *file;
-    char *input_path = "./data/number/inputvalue.out";
+    char *input_path = "./data/inputvalue.out";
     enter(&first,&second);
     swap(&first, &second);
     printValue(first,second);
@@ -81,6 +81,8 @@ int printValue(const int first,const int second){
 void exportInputValue(FILE *file, char *path, const int first, const int second){
     char *mode = "a";
     file = fopen(path,mode);
-    fprintf(file,"inputvalue = {first = %d, second = %d}\n",first,second);
+    fprintf(file,"\ninputvalue = {first = %d, second = %d}\n",first,second);
+    fprintf(file,"add:%d ,subtract: %d ,multiply:%.2f ,divide:%.2f \n",add(first,second),subtract(first,second),multiply(first,second),divide(first,second));
+    fprintf(file,"max:%d ",findMax(first,second));
     fclose(file);
 }

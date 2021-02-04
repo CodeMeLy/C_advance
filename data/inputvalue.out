@@ -1,0 +1,14 @@
+inputvalue = {first = 4, second = 6}
+add:10 ,subtract: -2 ,multiply:24.00 ,divide:0.67 inputvalue = {first = 4, second = 6}
+add:10 ,subtract: -2 ,multiply:24.00 ,divide:0.67 max:6 
+inputvalue = {first = 3, second = 2}
+
+add:5 ,subtract: 1 ,multiply:6.00 ,divide:1.50 
+max:3 
+inputvalue = {first = 3, second = 2}
+add:5 ,subtract: 1 ,multiply:6.00 ,divide:1.50 
+
+max:3 
+inputvalue = {first = 3, second = 2}
+add:5 ,subtract: 1 ,multiply:6.00 ,divide:1.50 
+max:3 
