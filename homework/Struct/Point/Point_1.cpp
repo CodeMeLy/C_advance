@@ -1,8 +1,3 @@
-/*TODO: viết chương trình:
-- nhập vào 3 điểm
-- kiểm tra xem 3 điểm đó lập thành tam giác hay không?
-- kiểm tra xem 3 điểm đó lập thành tam giác gì?
- */
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
@@ -35,7 +30,6 @@ int main(){
     printTriangleArea(first,second,third);
     return 0;
 }
-// TODO: hoàn thiện các hàm
 void enter(Point *input){
     printf("x: ");
     scanf("%d", &input->x);
@@ -101,7 +95,7 @@ bool isPointOfTriAngle(const Point first, const Point second, const Point third)
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return AB+AC > BC && AB + BC> AC && AC + BC> AB;
+    return AB+AC > BC && AB + BC> AC && AC + BC> AB;//tổng 2 cạnh lớn hơn cạnh còn lại
 }
 bool isEquilateralTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
