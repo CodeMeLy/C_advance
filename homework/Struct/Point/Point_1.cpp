@@ -103,3 +103,9 @@ bool isRightTriangle(const Point first, const Point second, const Point third){
     double BC = findDistance(second,third);
     return AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC);
 }
+bool isRightIsoscelesTriangle(const Point first, const Point second, const Point third){
+    double AB = findDistance(first,second);
+    double AC = findDistance(first,third);
+    double BC = findDistance(second,third);
+    return (AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC))&&(AB==AC||AC==BC||AB==BC);
+}
