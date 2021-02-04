@@ -65,13 +65,13 @@ double findDistance(const Point first, const Point second){
     double distance = sqrt((double)(first.x-second.x)*(first.x-second.x)+(first.y-second.y)*(first.y-second.y));//NOTE: khởi gán luôn nhé
     return distance;
 }
-double findTrianglePerimeter(const Point first, const Point second, const Point third){
+double findTrianglePerimeter(const Point first, const Point second, const Point third){// NOTE: là tam giác mới có chu vi
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
     return AB + AC + BC;
 }
-double findTriangleArea(const Point first, const Point second, const Point third){
+double findTriangleArea(const Point first, const Point second, const Point third){// NOTE: là tam giác mới có diện tích
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
@@ -101,7 +101,7 @@ bool isPointOfTriAngle(const Point first, const Point second, const Point third)
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return AB+AC > BC;//tổng 2 cạnh luôn lớn hơn cạnh còn lại
+    return AB+AC > BC && AB + BC> AC && AC + BC> AB;
 }
 bool isEquilateralTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
@@ -119,13 +119,10 @@ bool isRightTriangle(const Point first, const Point second, const Point third){
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    return AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC);
+    return AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC);// TODO: sử dụng pow trong math.h cho gọn nhé
 }
 bool isRightIsoscelesTriangle(const Point first, const Point second, const Point third){
-    double AB = findDistance(first,second);
-    double AC = findDistance(first,third);
-    double BC = findDistance(second,third);
-    return (AB*AB==(AC*AC)+(BC*BC)||AC*AC==(AB*AB)+(BC*BC)||BC*BC==(AB*AB)+(AC*AC))&&(AB==AC||AC==BC||AB==BC);
+    return isIsoscelesTriangle(first,second,third) && isRightTriangle(first,second,third);// là tam giác vuông, vừa là tam giác cân    
 }
 void typeOfTriangle(const Point first, const Point second, const Point third){
     if(canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)){
