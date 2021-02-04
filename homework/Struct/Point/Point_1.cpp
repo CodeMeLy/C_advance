@@ -82,3 +82,9 @@ bool isPointOfTriAngle(const Point first, const Point second, const Point third)
     double BC = findDistance(second,third);
     return AB+AC > BC;
 }
+bool isEquilateralTriangle(const Point first, const Point second, const Point third){
+    double AB = findDistance(first,second);
+    double AC = findDistance(first,third);
+    double BC = findDistance(second,third);
+    return canFormEgdeOfTriAngle(first,second)&&canFormEgdeOfTriAngle(first,third)&&canFormEgdeOfTriAngle(second,third)&&isPointOfTriAngle(first,second,third)&&AB==AC&&AC==BC&&AB==BC;
+}
