@@ -18,11 +18,10 @@ int subtract(const int first, const int second){
     return first - second;
 }
 double multiply(const int first, const int second){
-    return first * second;//F4
+    return first*second;
 }
 float divide(const int first, const int second){
-    // TODO: hoàn thiện hàm tính thương 2 số
-    return 0;
+    return (float)first/second;
 }
 int findMax(const int first, const int second){
     // TODO: hoàn thiện hàm tìm max của 2 số
