@@ -28,6 +28,7 @@ void printTriangleArea(const Point first, const Point second, const Point third)
 int main(){
     Point first, second, third;
     enter(&first,&second,&third);
+    print(first,second,third);
     printTrianglePerimeter(first, second, third);
     printTriangleArea(first,second,third);
     return 0;
@@ -46,6 +47,17 @@ void enter(Point *first, Point *second, Point *third){
     enter(second);
     printf("Enter point C:\n ");
     enter(third);
+}
+void print(const Point output){
+    printf("(%d, %d)\n", output.x, output.y);
+}
+void print(const Point first, const Point second, const Point third){
+    printf("Point A: ");
+    print(first);
+    printf("Point B: ");
+    print(second);
+    printf("Point C: ");
+    print(third);
 }
 double findDistance(const Point first, const Point second){
     double distance = sqrt((double)(first.x-second.x)*(first.x-second.x)+(first.y-second.y)*(first.y-second.y));//NOTE: khởi gán luôn nhé
