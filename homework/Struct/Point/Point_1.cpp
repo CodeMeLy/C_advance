@@ -63,7 +63,7 @@ double findTriangleArea(const Point first, const Point second, const Point third
     double AB = findDistance(first,second);
     double AC = findDistance(first,third);
     double BC = findDistance(second,third);
-    double triagle_perimeter = findTrianglePerimeter(first,second,third);
+    double triagle_perimeter = findTrianglePerimeter(first,second,third)/2;
     return sqrt(triagle_perimeter*(triagle_perimeter-AB)*(triagle_perimeter-AC)*(triagle_perimeter-BC));
 }
 void printTrianglePerimeter(const Point first, const Point second, const Point third){
