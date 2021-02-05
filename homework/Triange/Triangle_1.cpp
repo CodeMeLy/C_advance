@@ -7,7 +7,7 @@
  */
 #include<stdio.h>
 #include<assert.h>
-void isValid(const float egde);// kiểm tra một cạnh hợp lệ hay không?
+bool isValid(const float egde);// kiểm tra một cạnh hợp lệ hay không?
 void enter(float *first, float *second, float *third);// nhập 3 cạnh tam giác
 bool isEgdeOfTriAngle(const float first, const float second, const float third);// 3 cạnh có tạo thành tam giác hay không?
 bool isEquilateralTriangle(const float first, const float second, const float third);// là tam giác đều
@@ -20,11 +20,27 @@ void printTriangePerimeter(const float first, const float second, const float th
 void printTriangeArea(const float first, const float second, const float third);// in ra diện tích tam giác
 void checkTriagleType(const float first, const float second, const float third);// kiểm tra đó là tam giác gì?
 int main(){
-    // TODO: khai báo biến
     float *first, *second, *third;
-    // TODO: gọi hàm nhập
-    // TODO: gọi hàm in ra chu vi và diện tích
-    // TODO: gọi hàm in ra loại tam giác
+    first=(float*)calloc(10,sizeof(float));
+    second=(float*)calloc(10,sizeof(float));
+    third=(float*)calloc(10,sizeof(float));
+    enter(first,second,third);
     return 0;
 }
-//TODO: xây dựng các hàm trên
+bool isValid(const float egde){
+    return egde!=0;
+}
+void enter(float *first, float *second, float *third){
+    do{
+        printf("Enter first egde: ");
+        scanf("%f", first);
+    }while(!isValid(*first));
+    do{
+        printf("Enter second egde: ");
+        scanf("%f", second);
+    }while(!isValid(*second));
+    do{
+        printf("Enter third egde: ");
+        scanf("%f", third);
+    }while(!isValid(*third));
+}
