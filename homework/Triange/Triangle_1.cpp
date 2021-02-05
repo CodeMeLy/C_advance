@@ -63,3 +63,7 @@ bool isRightIsoscelesTriangle(const float first, const float second, const float
 float findTrianglePerimeter(const float first, const float second, const float third){
     return first+second+third;
 }
+float findTriangleArea(const float first, const float second, const float third){
+    float halfOfPerimeter=findTrianglePerimeter(first,second,third)/2.0;
+    return sqrt(halfOfPerimeter*(halfOfPerimeter-first)*(halfOfPerimeter-second)*(halfOfPerimeter-third));
+}
