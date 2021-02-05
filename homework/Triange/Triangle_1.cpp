@@ -44,3 +44,6 @@ void enter(float *first, float *second, float *third){
         scanf("%f", third);
     }while(!isValid(*third));
 }
+bool isEgdeOfTriAngle(const float first, const float second, const float third){
+    return first+second>third && first+third>second && second+third>first;
+}
