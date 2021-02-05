@@ -1,10 +1,3 @@
-/* // TODO: viết chương trình xây dựng và gọi hàm. được sử dụng google,được copy(không copy bài bạn) và phải hiểu
-1. viết chương trình nhập vào 3 cạnh tam giác và tính chu vi, diện tích
-2. viết hàm kiểm tra 3 cạnh có lập thành tam giác không?
-3. viết hàm kiểm tra 3 cạnh lập thành tam giác gì?
-- TH1: nếu có lập thành tam giác, kiểm tra xem nó là tam giác gì?
-- TH2: nếu nó không lập thành tam giác, in ra màn hình không lập thành tam giác
- */
 #include<stdio.h>
 #include<math.h>
 #include<assert.h>
@@ -26,6 +19,7 @@ int main(){
     second=(float*)calloc(10,sizeof(float));
     third=(float*)calloc(10,sizeof(float));
     enter(first,second,third);
+    checkTriagleType(*first,*second,*third);
     printTriangePerimeter(*first,*second,*third);
     printTriangeArea(*first,*second,*third);
     return 0;
@@ -77,5 +71,22 @@ void printTriangePerimeter(const float first, const float second, const float th
 void printTriangeArea(const float first, const float second, const float third){
     if(isEgdeOfTriAngle(first,second,third)){
         printf("\nArea of triangle: %.3f",findTriangleArea(first,second,third));
+    }
+}
+void checkTriagleType(const float first, const float second, const float third){
+    if(isEgdeOfTriAngle(first,second,third)){
+        if(isEquilateralTriangle(first,second,third)){
+            printf("This is equilateral triangle");
+        }else if(isIsoscelesTriangle(first,second,third)){
+            printf("This is isosceles triangle");
+        }else if(isRightTriangle(first,second,third)){
+            printf("This is right triangle");
+        }else if(isRightIsoscelesTriangle(first,second,third)){
+            printf("This is right isosceles triangle");
+        }else{
+            printf("This is normal triangle");
+        }
+    }else{
+        printf("This is not a triangle!");
     }
 }
