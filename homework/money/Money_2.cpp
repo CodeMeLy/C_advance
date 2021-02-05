@@ -29,8 +29,12 @@ void enter(double *money){
 int countNumbersOfWaysToDivide(const double money){
     int count;
     int moneyChange[3]={5000, 2000, 1000};
+    money=(int)money;
     for(int i=0;i<3;i++){
         count=money/moneyChange[i];
-        
+        if(count !=0){
+            printf("%d type of money %d",count,moneyChange[i]);
+        }
+        money= money % moneyChange[i];
     }
 }
