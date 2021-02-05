@@ -27,6 +27,7 @@ int main(){
     third=(float*)calloc(10,sizeof(float));
     enter(first,second,third);
     printTriangePerimeter(*first,*second,*third);
+    printTriangeArea(*first,*second,*third);
     return 0;
 }
 bool isValid(const float egde){
@@ -71,5 +72,10 @@ float findTriangleArea(const float first, const float second, const float third)
 void printTriangePerimeter(const float first, const float second, const float third){
     if(isEgdeOfTriAngle(first,second,third)){
         printf("\nPerimeter of triangle: %.3f",findTrianglePerimeter(first,second,third));
+    }
+}
+void printTriangeArea(const float first, const float second, const float third){
+    if(isEgdeOfTriAngle(first,second,third)){
+        printf("\nArea of triangle: %.3f",findTriangleArea(first,second,third));
     }
 }
