@@ -25,7 +25,7 @@ int main(){
     return 0;
 }
 bool isValid(const float egde){
-    return egde!=0;
+    return egde>0;
 }
 void enter(float *first, float *second, float *third){
     do{
