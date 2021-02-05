@@ -60,3 +60,6 @@ bool isRightTriangle(const float first, const float second, const float third){
 bool isRightIsoscelesTriangle(const float first, const float second, const float third){
     return isRightIsoscelesTriangle(first,second,third)&&isRightTriangle(first,second,third);
 }
+float findTrianglePerimeter(const float first, const float second, const float third){
+    return first+second+third;
+}
