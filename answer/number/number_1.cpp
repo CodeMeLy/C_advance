@@ -16,25 +16,16 @@ int add(const int first, const int second){
 }
 int subtract(const int first, const int second){
     return first - second;
-    return 0;
 }
 double multiply(const int first, const int second){
     return first*second;
-    return 0;
 }
 float divide(const int first, const int second){
     return (float)first/second;
-    return 0;
+
 }
-int findMax(const int first, const int second){
-    float max = 0;
-    if(first > second){
-        max = first;
-    }
-    else{
-        max = second;
-        }
-    return max;
+int findMax(const int first, const int second){// tìm max 2 số người ta cũng k làm v
+  return first>second?first:second;
 }
 
 // test

@@ -3,13 +3,13 @@
 2.viết hàm nhập vào VND và tìm ra USD */
 #include<stdio.h>
 enum Selector{
-    Convert_USD_VND = 1, Convert_VND_USD = 2
+    USD_TO_VND = 1, VND_TO_USD = 2// NOTE: Mình sửa tên mình k sửa kiểu v
 };
 
 void enterMoney(float *input);// nhập số tiền
 void enterExchangeRate(float *input);// nhập tỉ giá
 float transfer(const float money, const float exchange_rate);// chuyển đổi tiền
-void printTransferValue(const float money, const float exchange_rate);// in ra giá trị sau khi chuyển đổi
+// void printTransferValue(const float money, const float exchange_rate);// in ra giá trị sau khi chuyển đổi
 void menu(const float money, const float exchange_rate);// hàm menu
 
 int main(){
@@ -17,6 +17,7 @@ int main(){
     enterMoney(&money);
     enterExchangeRate(&exchange_rate);
     menu(money, exchange_rate);
+
     return 0;
 }
     
@@ -49,11 +50,11 @@ void menu(const float money, const float exchange_rate){
         scanf("%d",&menu_option);
         switch (menu_option)
         {
-        case Convert_USD_VND:
+        case USD_TO_VND:
             printTransferValue(money,exchange_rate);
             break;
         
-        case Convert_VND_USD:
+        case VND_TO_USD:
             printTransferValue(money,exchange_rate);
             break;
         
@@ -61,7 +62,7 @@ void menu(const float money, const float exchange_rate){
             printf("\noption is invalid!");
         }
 
-        printf("\nPress 0 to exit ");
+        printf("\nPress 0 to exit or else to continue");
         scanf("%d", &exit_option);
     } while(exit_option);
 }
