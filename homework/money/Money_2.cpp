@@ -12,6 +12,7 @@ int main(){
     double money;
     enter(&money);
     countNumbersOfWaysToDivide(money);
+    digitsWaysToDivide(money);
     return 0;
 }
 // TODO: hoàn thiện các hàm
@@ -39,4 +40,15 @@ void countNumbersOfWaysToDivide(double money){
         }
     }
     printf("Have %d ways to divide into 1000, 2000, 5000", count);
+}
+void digitsWaysToDivide(double money){
+    int fiveK, twoK, oneK;
+    for(fiveK=0; fiveK<=money/5000; fiveK++){
+        for(twoK=0; twoK<=(money-fiveK*5000)/2000; twoK++){
+            oneK=(money-(fiveK*5000)-(twoK*2000))/1000;
+            if(fiveK*5000+twoK*2000+oneK*1000==money){
+                printf("\n%d type 5000, %d type 2000, %d type 1000",fiveK,twoK,oneK);
+            }
+        }
+    }
 }
