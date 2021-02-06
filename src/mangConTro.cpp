@@ -1,28 +1,30 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define Max 100
-void enter(int &size);
-void enter(int **array, int size);
-void output(int **array, int size);
+int enter(int **array);
+void print(int *array, int size);
 int main(){
-    int **array, size;
-    array=(int**)(malloc(size*sizeof(int*)));
-    enter(size);
-    enter(array, size);
-    output(array,size);
+    int *array;
+    int size;
+    size = enter(&array);
+    print(array,size);
+    return 0;
 }
-void enter(int &size){
-    printf("Enter n: ");
-    scanf("%d", &size);
-}
-void enter(int **array, int size){
-    for(int i=0;i<size;i++){
-        printf("a[%d]: ",i+1);
-        scanf("%d", (array+i));
+int enter(int **array){
+    int size;
+    int temp;
+    printf("size of array: ");
+    scanf("%d",&size);
+    *array = (int*)malloc(size*sizeof(int));
+    for(int index=0;index<size;index++){
+        printf("array[%d]: ",index);
+        scanf("%d",&temp);
+        *(*array+index) = temp;
     }
+    return size;
 }
-void output(int **array, int size){
-    for(int i=0;i<size;i++){
-        printf("\t%d", **(array+i));
+void print(int *array, int size){
+    printf("\narray:");
+    for(int index=0;index<size;index++){
+        printf("%d ",*(array+index));
     }
 }
