@@ -31,16 +31,16 @@ void enter(double *money){
 int countNumbersOfWaysToDivide(const double money){
     int counter = 0; // kĩ thuật đếm
     // NOTE: số tờ tiền tối đa có thể có
-    int max_1000 = (int) money/1000;
-    int max_2000 = (int) money/2000;
     int max_5000 = (int) money/5000;
     // NOTE: đếm số cách chia
             for(int counter_5000 = 0; counter_5000 <= max_5000; counter_5000++){
+                int max_2000 = (int) (money - counter_5000*5000)/2000;// số tờ tiền tối đa sau khi đếm số cách
                 for(int counter_2000 = 0; counter_2000 <= max_2000;counter_2000++){
-                        for(int counter_1000 = 0; counter_1000 <= max_1000; counter_1000++){
-                if(counter_1000 *1000 + counter_2000 *2000 +counter_5000*5000==money){
-                    counter++;
-                }   
+                    int max_1000 = (int) (money-(counter_5000*5000+counter_2000*2000))/1000;
+                    for(int counter_1000 = 0; counter_1000 <= max_1000; counter_1000++){
+                        if(counter_1000 *1000 + counter_2000 *2000 +counter_5000*5000==money){
+                            counter++;
+                        }   
             }
         }
     }
