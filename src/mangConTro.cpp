@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 int enter(int **array);
 void print(int *array, int size);
 int findMax(int *array, int size);
@@ -8,6 +9,8 @@ int findMin(int *array, int size);
 void printMin(int *array, int size);
 void evenNumber(int *array, int size);
 void oddNumber(int *array, int size);
+bool isPrime(int n);
+void primeCount(int *array, int size);
 int main(){
     int *array;
     int size;
@@ -17,6 +20,7 @@ int main(){
     printMin(array,size);
     evenNumber(array,size);
     oddNumber(array,size);
+    primeCount(array,size);
     return 0;
 }
 int enter(int **array){
@@ -77,4 +81,30 @@ void oddNumber(int *array, int size){
             printf("\t%d", *(array+i));
         }
     }
+}
+bool isPrime(int n)
+{ //kiểm tra số nguyên tố trong mảng
+    bool prime = true;
+    if (n < 2)
+        prime = false;
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            prime = false;
+        }
+    }
+    return prime;
+}
+void primeCount(int *array, int size)
+{
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (isPrime(*(array+i)))
+        {
+            count++;
+        }
+    }
+    printf("\nPrime numbers in array is: %d", count);
 }
