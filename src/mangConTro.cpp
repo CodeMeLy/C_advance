@@ -11,6 +11,7 @@ void evenNumber(int *array, int size);
 void oddNumber(int *array, int size);
 bool isPrime(int n);
 void primeCount(int *array, int size);
+void squareNumber(int *array, int size);
 int main(){
     int *array;
     int size;
@@ -21,6 +22,7 @@ int main(){
     evenNumber(array,size);
     oddNumber(array,size);
     primeCount(array,size);
+    squareNumber(array,size);
     return 0;
 }
 int enter(int **array){
@@ -107,4 +109,13 @@ void primeCount(int *array, int size)
         }
     }
     printf("\nPrime numbers in array is: %d", count);
+}
+void squareNumber(int *array, int size){
+    int count=0;
+    for(int i=0;i<size;i++){
+        if(sqrt(*(array+i))*sqrt(*(array+i))==*(array+i)){
+            count++;
+        }
+    }
+    printf("\nSquare numbers in array is: %d", count);
 }
