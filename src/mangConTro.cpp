@@ -7,6 +7,7 @@ void printMax(int *array, int size);
 int findMin(int *array, int size);
 void printMin(int *array, int size);
 void evenNumber(int *array, int size);
+void oddNumber(int *array, int size);
 int main(){
     int *array;
     int size;
@@ -15,6 +16,7 @@ int main(){
     printMax(array,size);
     printMin(array,size);
     evenNumber(array,size);
+    oddNumber(array,size);
     return 0;
 }
 int enter(int **array){
@@ -64,6 +66,14 @@ void evenNumber(int *array, int size){
     printf("\nEven numbers of array is: ");
     for(int i=0;i<size;i++){
         if(*(array+i)%2==0){
+            printf("\t%d", *(array+i));
+        }
+    }
+}
+void oddNumber(int *array, int size){
+    printf("\nOdd numbers of array is: ");
+    for(int i=0;i<size;i++){
+        if(*(array+i)%2!=0){
             printf("\t%d", *(array+i));
         }
     }
