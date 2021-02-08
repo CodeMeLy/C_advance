@@ -24,11 +24,10 @@ float divide(const int first, const int second){
     return (float)first/second;
 
 }
-int findMax(const int first, const int second){// tìm max 2 số người ta cũng k làm v
+int findMax(const int first, const int second){
   return first>second?first:second;
 }
 
-// test
 void test_caculator(){
     printf("phép tính: \n");
     printf("\t -cộng 2 số: ");

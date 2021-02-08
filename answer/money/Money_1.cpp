@@ -3,8 +3,7 @@
 2.viết hàm nhập vào VND và tìm ra USD */
 #include<stdio.h>
 enum Selector{
-    USD_TO_VND = 1, VND_TO_USD = 2// NOTE: Mình sửa tên mình k sửa kiểu v
-};
+    USD_TO_VND = 1, VND_TO_USD = 2
 
 void enterMoney(float *input);// nhập số tiền
 void enterExchangeRate(float *input);// nhập tỉ giá
@@ -17,7 +16,6 @@ int main(){
     enterMoney(&money);
     enterExchangeRate(&exchange_rate);
     menu(money, exchange_rate);
-
     return 0;
 }
     
