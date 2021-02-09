@@ -15,6 +15,8 @@ int findMax(int *array, int size); // Tìm giá trị max
 int findMin(int *array, int size); // Tìm giá trị min
 int countNumbersOfValue(int *array, int size, int value); // đếm số lần xuất hiện của value
 int* findIndexOfValue(int *array, int size, int value); // Tìm vị trí của một giá trị nhập vào
+int* findIndexOfMax(int *array, int size); // Tìm vị trí của một giá trị nhập vào
+int* findIndexOfMin(int *array, int size); // Tìm vị trí của một giá trị nhập vào
 void print(int *array, int size);// thêm hàm in mảng
 
 int main(){
@@ -32,13 +34,16 @@ int main(){
     // tìm vị trí tương ứng với value là max 
     value = findMax(array,size);
     printf("index of max = %d is: ",value);
-    result = findIndexOfValue(array,size,value);
+    result = findIndexOfMax(array,size);
     print(result,countNumbersOfValue(array,size,value));
     // tìm vị trí tương uwsng với value là min
     value = findMin(array,size);
     printf("index of min = %d is: ",value);
-    result = findIndexOfValue(array,size,value);
+    result = findIndexOfMin(array,size);
     print(result,countNumbersOfValue(array,size,value));
+    // giải phóng bộ nhớ
+    free(array);
+    free(result);
     return 0;    
 }
 void enter(int &size){
@@ -93,8 +98,9 @@ int countNumbersOfValue(int *array, int size, int value){
 }
 int* findIndexOfValue(int *array, int size, int value){
     int *result;
-    int temp = 0;
+    int temp = 0;//NOTE: sử dụng debug F5 để tìm hiểu xem temp là gì nhé nếu chưa hiểu ^^
     int size_result = countNumbersOfValue(array, size,value);
+    result = (int*)calloc(size_result,sizeof(int));// cấp phát bộ nhớ
     for(int index = 0; index < size; index++){
         if(value == array[index]){
             result[temp] =  index;
@@ -102,4 +108,10 @@ int* findIndexOfValue(int *array, int size, int value){
         }
     }
     return result;
+}
+int* findIndexOfMax(int *array, int size){
+    return findIndexOfValue(array, size,findMax(array, size));
+}
+int* findIndexOfMin(int *array, int size){
+    return findIndexOfValue( array, size,findMin(array, size));
 }
