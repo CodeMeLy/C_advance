@@ -22,6 +22,7 @@ void printLocationOfValue(int *array, int size, int value);
 int* findIndexOfMin(int *array, int size);// tìm vị trí min
 void printLocationOfMin(int *array, int size);
 int* findIndexOfMax(int *array, int size);// tìm vị trí max
+void printLocationOfMax(int *array, int size);
 int main(){
     int *array, size, value;
     enter(size);
@@ -29,9 +30,10 @@ int main(){
     enter(array,size);
     printMax(array,size);
     printMin(array,size);
+    printLocationOfMin(array,size);
+    printLocationOfMax(array,size);
     enterValue(value);
     printLocationOfValue(array,size,value);
-    printLocationOfMin(array,size);
     return 0;    
 }
 void enter(int &size){
@@ -103,5 +105,12 @@ int* findIndexOfMin(int *array, int size){
 }
 void printLocationOfMin(int *array, int size){
     int *result=findIndexOfMin(array, size);
-    printf("\nLocation of min value in array is: %d",result);
+    printf("\nLocation of min value in array is: %d",*result);
+}
+int* findIndexOfMax(int *array, int size){
+    return findIndexOfValue(array,size,findMax(array,size));
+}
+void printLocationOfMax(int *array, int size){
+    int *result=findIndexOfMax(array, size);
+    printf("\nLocation of max value in array is: %d",*result);
 }
