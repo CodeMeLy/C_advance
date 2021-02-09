@@ -11,7 +11,7 @@ void enter(int &size);// nhập số lượng phần tử
 void enter(int *array, int size);// nhập vào mảng
 int findMax(int *array, int size);// tìm giá trị max
 int findMin(int *array, int size);// tìm giá trị min
-int findIndexOfValue(int *array, int size, int value);// tìm vị trí của một giá trị nhập vào
+int* findIndexOfValue(int *array, int size, int value);// tìm vị trí của một giá trị nhập vào
 int* findIndexOfMin(int *array, int size);// tìm vị trí min
 int* findIndexOfMax(int *array, int size);// tìm vị trí max
 int main(){
