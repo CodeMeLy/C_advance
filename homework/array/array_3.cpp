@@ -11,6 +11,7 @@
 #include<stdlib.h>
 void enter(int &size);// nhập số lượng phần tử
 void enter(int *array, int size);// nhập vào mảng
+void print(int *array, int size);
 int findMax(int *array, int size);// tìm giá trị max
 void printMax(int *array, int size);
 int findMin(int *array, int size);// tìm giá trị min
@@ -18,23 +19,28 @@ void printMin(int *array, int size);
 void enterValue(int &value);
 int countNumbersOfValue(int *array, int size, int value); // đếm số lần xuất hiện của value
 int* findIndexOfValue(int *array, int size, int value);// tìm vị trí của một giá trị nhập vào
-void printLocationOfValue(int *array, int size, int value);
 int* findIndexOfMin(int *array, int size);// tìm vị trí min
-void printLocationOfMin(int *array, int size);
 int* findIndexOfMax(int *array, int size);// tìm vị trí max
-void printLocationOfMax(int *array, int size);
 int main(){
-    int *array, size, value;
+    int *array, size, value=4;
     enter(size);
     array = (int*)calloc(size, sizeof(int));
     enter(array,size);
+    print(array,size);
     printMax(array,size);
     printMin(array,size);
-    printLocationOfMin(array,size);
-    printLocationOfMax(array,size);
+    //vị trí của min
+    printf("\nLocation of min value in array is: ");
+    print(findIndexOfMin(array,size),countNumbersOfValue(array,size,value));
+    //vị trí của max
+    printf("\nLocation of max value in array is: ");
+    print(findIndexOfMax(array,size),countNumbersOfValue(array,size,value));
+    //vị trí của value
     enterValue(value);
-    printLocationOfValue(array,size,value);
-    return 0;    
+    printf("\nLocation of value in array:");
+    print(findIndexOfValue(array,size,value),countNumbersOfValue(array,size,value));
+    free(array);
+    return 0;
 }
 void enter(int &size){
     printf("Enter size of array: ");
@@ -44,6 +50,16 @@ void enter(int *array, int size){
     for(int i=0;i<size;i++){
         printf("a[%d]: ", i);
         scanf("%d", &array[i]);
+    }
+}
+void print(int *array, int size){
+    if(size ==0){
+        printf("empty!");
+    }
+    else{
+        for(int index = 0; index < size; index++){
+            printf("%d ",array[index]);
+        }
     }
 }
 int findMax(int *array, int size){
@@ -56,7 +72,7 @@ int findMax(int *array, int size){
     return max;
 }
 void printMax(int *array, int size){
-    printf("Max value of array is: %d", findMax(array,size));
+    printf("\nMax value of array is: %d", findMax(array,size));
 }
 int findMin(int *array, int size){
     int min=array[0];
@@ -96,21 +112,9 @@ int* findIndexOfValue(int *array, int size, int value){
     }
     return result;
 }
-void printLocationOfValue(int *array, int size, int value){
-    int *result=findIndexOfValue(array,size,value);
-    printf("Location of value is: %d", *result);
-}
 int* findIndexOfMin(int *array, int size){
     return findIndexOfValue(array,size,findMin(array,size));
 }
-void printLocationOfMin(int *array, int size){
-    int *result=findIndexOfMin(array, size);
-    printf("\nLocation of min value in array is: %d",*result);
-}
 int* findIndexOfMax(int *array, int size){
     return findIndexOfValue(array,size,findMax(array,size));
-}
-void printLocationOfMax(int *array, int size){
-    int *result=findIndexOfMax(array, size);
-    printf("\nLocation of max value in array is: %d",*result);
 }
