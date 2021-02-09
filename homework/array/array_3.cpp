@@ -12,6 +12,7 @@
 void enter(int &size);// nhập số lượng phần tử
 void enter(int *array, int size);// nhập vào mảng
 int findMax(int *array, int size);// tìm giá trị max
+void printMax(int *array, int size);
 int findMin(int *array, int size);// tìm giá trị min
 int* findIndexOfValue(int *array, int size, int value);// tìm vị trí của một giá trị nhập vào
 int* findIndexOfMin(int *array, int size);// tìm vị trí min
@@ -21,6 +22,7 @@ int main(){
     enter(size);
     array = (int*)calloc(size, sizeof(int));
     enter(array,size);
+    printMax(array,size);
     return 0;    
 }
 void enter(int &size){
@@ -32,4 +34,16 @@ void enter(int *array, int size){
         printf("a[%d]: ", i);
         scanf("%d", &array[i]);
     }
+}
+int findMax(int *array, int size){
+    int max=array[0];
+    for(int i=1;i<size;i++){
+        if(array[i]>max){
+            max=array[i];
+        }
+    }
+    return max;
+}
+void printMax(int *array, int size){
+    printf("Max value of array is: %d", findMax(array,size));
 }
