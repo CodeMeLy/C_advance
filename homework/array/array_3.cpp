@@ -20,6 +20,7 @@ int countNumbersOfValue(int *array, int size, int value); // đếm số lần x
 int* findIndexOfValue(int *array, int size, int value);// tìm vị trí của một giá trị nhập vào
 void printLocationOfValue(int *array, int size, int value);
 int* findIndexOfMin(int *array, int size);// tìm vị trí min
+void printLocationOfMin(int *array, int size);
 int* findIndexOfMax(int *array, int size);// tìm vị trí max
 int main(){
     int *array, size, value;
@@ -30,6 +31,7 @@ int main(){
     printMin(array,size);
     enterValue(value);
     printLocationOfValue(array,size,value);
+    printLocationOfMin(array,size);
     return 0;    
 }
 void enter(int &size){
@@ -95,4 +97,11 @@ int* findIndexOfValue(int *array, int size, int value){
 void printLocationOfValue(int *array, int size, int value){
     int *result=findIndexOfValue(array,size,value);
     printf("Location of value is: %d", *result);
+}
+int* findIndexOfMin(int *array, int size){
+    return findIndexOfValue(array,size,findMin(array,size));
+}
+void printLocationOfMin(int *array, int size){
+    int *result=findIndexOfMin(array, size);
+    printf("\nLocation of min value in array is: %d",result);
 }
