@@ -7,6 +7,8 @@
  * - tìm kiếm vị trí của min trong mảng
  * - xuất
  * */
+#include<stdio.h>
+#include<stdlib.h>
 void enter(int &size);// nhập số lượng phần tử
 void enter(int *array, int size);// nhập vào mảng
 int findMax(int *array, int size);// tìm giá trị max
@@ -16,7 +18,18 @@ int* findIndexOfMin(int *array, int size);// tìm vị trí min
 int* findIndexOfMax(int *array, int size);// tìm vị trí max
 int main(){
     int *array, size;
-    // TODO: gọi hàm
+    enter(size);
+    array = (int*)calloc(size, sizeof(int));
+    enter(array,size);
     return 0;    
 }
-// TODO: xây dựng các hàm
+void enter(int &size){
+    printf("Enter size of array: ");
+    scanf("%d", &size);
+}
+void enter(int *array, int size){
+    for(int i=0;i<size;i++){
+        printf("a[%d]: ", i);
+        scanf("%d", &array[i]);
+    }
+}
