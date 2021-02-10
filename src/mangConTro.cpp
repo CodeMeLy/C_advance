@@ -17,6 +17,8 @@ void printSymmetricalNumbers(int *array, int size);
 void enterValue(int &value);
 int countNumbersOfValue(int *array, int size, int value);
 int* findIndexOfValue(int *array, int size, int value);
+int* findIndexOfMin(int *array, int size);
+int* findIndexOfMax(int *array, int size);
 int main(){
     int *array, value;
     int size;
@@ -30,7 +32,12 @@ int main(){
     squareNumber(array,size);
     printSymmetricalNumbers(array,size);
     enterValue(value);
+    printf("Location of value in array is: ");
     print(findIndexOfValue(array,size,value),countNumbersOfValue(array,size,value));
+    printf("\nLocation of min value in array is: ");
+    print(findIndexOfMin(array,size),countNumbersOfValue(array,size,value));
+    printf("\nLocation of max value in array is: ");
+    print(findIndexOfMax(array,size),countNumbersOfValue(array,size,value));
     return 0;
 }
 int enter(int **array){
@@ -185,4 +192,12 @@ int* findIndexOfValue(int *array, int size, int value){
         }
     }
     return result;
+}
+int* findIndexOfMin(int *array, int size){
+    //tìm vị trí min
+    return findIndexOfValue(array,size,findMin(array,size));
+}
+int* findIndexOfMax(int *array, int size){
+    //tìm vị trí max
+    return findIndexOfValue(array,size,findMax(array,size));
 }
