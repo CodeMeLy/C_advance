@@ -38,6 +38,7 @@ int main(){
     print(findIndexOfMin(array,size),countNumbersOfValue(array,size,value));
     printf("\nLocation of max value in array is: ");
     print(findIndexOfMax(array,size),countNumbersOfValue(array,size,value));
+    free(array);
     return 0;
 }
 int enter(int **array){
