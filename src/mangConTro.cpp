@@ -12,6 +12,8 @@ void oddNumber(int *array, int size);
 bool isPrime(int n);
 void primeCount(int *array, int size);
 void squareNumber(int *array, int size);
+bool findSymmetricalNumbers(int n);
+void printSymmetricalNumbers(int *array, int size);
 int main(){
     int *array;
     int size;
@@ -23,6 +25,7 @@ int main(){
     oddNumber(array,size);
     primeCount(array,size);
     squareNumber(array,size);
+    printSymmetricalNumbers(array,size);
     return 0;
 }
 int enter(int **array){
@@ -118,4 +121,27 @@ void squareNumber(int *array, int size){
         }
     }
     printf("\nSquare numbers in array is: %d", count);
+}
+bool findSymmetricalNumbers(int n){
+    //tìm số gánh(số đối xứng)
+    int a[100];
+	int value=(int)log10((float)n)+1;
+	for(int i=0;i<value;i++){
+		a[value-i-1]=n%10;
+		n/=10;
+	}
+	for(int i=0;i<value;i++){
+		if(a[i]!=a[value-i-1]){
+            return a[i];
+            break;
+        }
+	}
+}
+void printSymmetricalNumbers(int *array, int size){
+    printf("\nSymmetrical numbers in array is: ");
+    for(int i=0;i<size;i++){
+        if(!findSymmetricalNumbers(*(array+i))){
+            printf("\t%d",*(array+i));
+        }
+    }
 }
