@@ -14,8 +14,11 @@ void primeCount(int *array, int size);
 void squareNumber(int *array, int size);
 bool findSymmetricalNumbers(int n);
 void printSymmetricalNumbers(int *array, int size);
+void enterValue(int &value);
+int countNumbersOfValue(int *array, int size, int value);
+int* findIndexOfValue(int *array, int size, int value);
 int main(){
-    int *array;
+    int *array, value;
     int size;
     size = enter(&array);
     print(array,size);
@@ -26,6 +29,8 @@ int main(){
     primeCount(array,size);
     squareNumber(array,size);
     printSymmetricalNumbers(array,size);
+    enterValue(value);
+    print(findIndexOfValue(array,size,value),countNumbersOfValue(array,size,value));
     return 0;
 }
 int enter(int **array){
@@ -42,9 +47,13 @@ int enter(int **array){
     return size;
 }
 void print(int *array, int size){
-    printf("\narray:");
-    for(int index=0;index<size;index++){
-        printf("%d ",*(array+index));
+    if(size ==0){
+        printf("empty!");
+    }
+    else{
+        for(int index = 0; index < size; index++){
+            printf("%d ",array[index]);
+        }
     }
 }
 int findMax(int *array, int size){
@@ -142,6 +151,38 @@ void printSymmetricalNumbers(int *array, int size){
     for(int i=0;i<size;i++){
         if(!findSymmetricalNumbers(*(array+i))){
             printf("\t%d",*(array+i));
+        }else{
+            printf("Don't have :P");
+            break;
         }
     }
+}
+void enterValue(int &value){
+    //nhập 1 giá trị bất kì
+     printf("\nEnter a value: ");
+    scanf("%d", &value);
+}
+int countNumbersOfValue(int *array, int size, int value){
+    // đếm số lần xuất hiện của giá trị đó
+    int count = 0;
+    for(int index = 0; index < size; index++){
+        if(array[index] == value){
+            count++;
+        }
+    }
+    return count;
+}
+int* findIndexOfValue(int *array, int size, int value){
+    // tìm vị trí của giá trị đó
+    int *result;
+    int temp = 0;
+    int size_result = countNumbersOfValue(array, size,value);
+    result = (int*)calloc(size_result,sizeof(int));// cấp phát bộ nhớ
+    for(int index = 0; index < size; index++){
+        if(value == array[index]){
+            result[temp] =  index;
+            temp++;
+        }
+    }
+    return result;
 }
