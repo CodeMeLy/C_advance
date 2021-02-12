@@ -37,7 +37,7 @@ int  gcd(int first, int second){
     return first + second;
     return 0;
 }
-Fraction compact (Fraction fraction){
+Fraction compact (Fraction fraction){ // TODO: chưa viết nè
     Fraction result;
 }   
 Fraction plus(Fraction first, Fraction second){
@@ -70,7 +70,6 @@ Fraction divide(Fraction first, Fraction second){
  * - nếu phân số thứ 1 nhỏ hơn phân số thứ 2. trả về SMALLER
  **/
 CompareResult compare(Fraction first, Fraction second){
-    return EQUAL;
     CompareResult result = EQUAL;
     if(first.numerator*second.denominator > first.denominator*second.numerator){
         result = LARGER;
