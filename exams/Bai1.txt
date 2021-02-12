@@ -1,0 +1,40 @@
+dealine: 1/3/2021
+Đến hạn 1 thg 3
+I.	Integer.cpp
+1.	Nhập 2 số truyền vào tham chiếu
+2.	Nhập 2 số truyền vào con trỏ
+3.	Cộng, trừ, nhân, chia hai số
+4.	Tìm max của 2 số
+5.	Tìm tính tương quan của 2 số. 
+-	Định nghĩa kiểu enum là kết quả của việc so sánh 2 số
+-	Nếu đúng số thứ nhất > số thứ 2: trả về LARGER
+-	Nếu bằng trả về: EQUAL
+-	Nếu bé hơn trả về: SMALLER
+6.	Viết hàm xuất ra 2 số
+7.	Viết hàm xuất các kết quả tính
+8.	Viết hàm xuất vào file
+9.	Viết hàm nhập liệu từ file
+II.	Array.cpp
+10.	Nhập vào một mảng sử dụng con trỏ (*array)
+Bản chất: *array là cách viết khác của array[]
+11.	Nhập vào một mảng sử dụng con trỏ trỏ con trỏ (**array)
+12.	Viết hàm xuất ra một mảng
+13.	Viết hàm tìm giá trị lớn nhất của một mảng
+14.	Viết hàm tìm giá trị nhỏ nhất của một mảng
+15.	Viết hàm đếm số lượng số chẵn có trong mảng
+16.	Viết hàm đếm số lượng số lẻ có trong mảng
+17.	Viết hàm đếm số lượng số nguyên tố có trong mảng
+18.	Viết hàm đếm số lượng số chính phương
+19.	Viết hàm đếm số lượng số gánh có trong mảng
+20.	Viết hàm đếm số cặp số liền kề nhau (ví dụ: a[i] == a[1+1]+1 hoặc a[i] == a[i-1]+1);
+21.	Viết hàm tìm vị trí chứa giá trị lớn nhất của một mảng. Hàm trả về một con trỏ
+22.	Viết hàm tìm vị trí chứa giá trị nhỏ nhất của một mảng. Hàm trả về một con trỏ
+23.	Viết hàm tìm các vị trí phần tử có giá trị là lẻ nằm trong một mảng. Hàm trả về một con trỏ.
+24.	Viết hàm tìm vị trí các phần tử có giá trị là số nguyên tố có trong mảng. Hàm trả về một con trỏ.
+III.	Student.cpp
+25.	Định nghĩa 1 class Student gồm: tên, tuổi, ngày sinh(ngày,tháng, năm), giới tính, điểm (toán, lí, hóa)
+26.	Nhập vào 1 student theo cách truyền tham chiếu (Student &student), có kiểm tra ngày sinh, điểm hợp lệ.
+27.	Nhập vào 1 student theo cách truyền địa chỉ (Student *student)
+28.	Xuất ra student đó
+29.	Tính điểm trung bình của student
+30.	Xếp loại Student. Trả về giá trị của kiểu enum: Assessment gồm 3 trạng thái: excellent, good, bad.

@@ -1,0 +1,62 @@
+dealine: 1/3/2021
+- Phương trình
+1. Giải phương trình bậc 1
+2. Giải phương trình bậc 2
+- Dãy số
+3. Xuất số chính phương nhỏ hơn n
+4. Liệt kê tất cả số nguyên tố nhỏ hơn n
+- Ngày, tháng, năm
+5. Nhập ngày, tháng, năm
+6. Kiểm tra tháng đó có bao nhiêu ngày?
+7. Tìm ngày trước ngày vừa nhập
+8. Tìm ngày sau ngày vừa nhập
+9. Cộng 2 ngày
+- Các thuật toán quan trọng:
+10. Tính giai thừa bằng đệ quy và vòng lặp
+11. Tính số Fibonacci
+12. Tìm ước số chung của 2 số. trả về một mảng
+13. Tìm ước số chung lớn nhất của 2 số
+Bài tập về Mảng một chiều:
+14. Nhập, xuất mảng
+15. Tính tổng các phần tử trong mảng 1 chiều
+16. Truyền tham số cho mảng, tính trung bình cộng, tính trung bình cộng số dương
+17. Liệt kê các phần tử thỏa mãn điều kiện trọng mảng một chiều
+18. Tìm max, min
+19. Sắp xếp tăng dần, giảm dần
+20. Đảo ngược mảng 1 chiều
+21. Tìm kiếm vị trí của các phần tử trong mảng một chiều. trả về một con trỏ.
+22. Tìm top n phần tử trong mảng: top n nhỏ nhất, top n lớn nhất
+23. Xóa phần tử theo vị trí của mảng
+24. Chèn vào phần tử đầu, cuối, vị trí bất kì của mảng
+25. Trộn 2 mảng đã sắp xếp tăng dần thành một mảng
+26. Tách một mảng thành 2 mảng số chẵn và mảng số lẻ
+27. Kiểm tra một mảng có phải là mảng con của mảng kia hay không?
+28. Tìm mảng con dài nhất, tìm mảng con không giảm, tìm mảng con không tăng dài nhất
+- Bài tập về ma trận:
+29. Nhập xuất mảng 2 chiều
+30. Tìm kiếm vị trí của mảng hai chiều trong ma trận.
+31. Tính trung bình cộng
+32. Tìm giá trị lớn nhất và giá trị nhỏ nhất
+33. Tìm giá trị lớn nhất và nhỏ nhất của từng dòng và từng cột. Hàm trả về một con trỏ.
+34. Chuyển mảng 2 chiều thành mảng 1 chiều. Hàm trả về một con trỏ
+35. Sắp xếp mảng 2 chiều
+36. Đổi giá trị 2 dòng, 2 cột
+37. Xóa 1 dòng và xóa 1 cột
+38. Kiểm tra mảng đối xứng qua đường chéo chính và đường chéo phụ
+39. Chuyển vị ma trận
+40. Tính định thức ma trận
+- Bài tập về chuỗi:
+41. Nhập, xuất một chuỗi
+42. Nhập xuất hai chuỗi
+43. Viết hàm đếm số lượng kí tự trong chuỗi
+44. Viết hàm xóa kí tự xuống dòng của một chuỗi
+45. Viết hàm nối 2 chuỗi
+46. Copy một chuỗi sang chuỗi khác
+47. So sánh 2 chuỗi trong C
+48. Chuyển một chuỗi sang dạng viết hoa và dạng viết thường
+49. Viết hoa chữ cái đầu. ví dụ: hello world  Hello World
+50. Xóa kí tự xuống dòng của một chuỗi
+51. Xóa các kí tự space của một chuỗi
+52. Đảo ngược một chuỗi
+53. Tìm kiếm một kí tự trong chuỗi
+54. Kiểm tra một chuỗi có đối xứng hay không?

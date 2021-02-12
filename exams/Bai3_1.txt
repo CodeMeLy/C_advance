@@ -1,0 +1,59 @@
+dealine: 1/3/2021
+Bài 1. Cấu trúc điều khiển:
+1.1 Viết chương trình nhập vào hai số a và b, nhập một trong các phép toán pt: +, -,* , /. ^. In
+lên màn hình kết quả của biểu thức a pt b. Ví dụ: a=5, b=2, pt=^ thì trên màn hình hiển thị
+5 ^ 2 = 25.
+1.2 Sửa lại chương trình trên để người dùng có thể thực hiện nhiều cho đến khi muốn kết thúc
+bằng ấn nhấn phím thoát (ESC, n…).
+Bài 2. Viết chương trình nhập vào một dãy số nguyên và thực hiện:
+- Tính tổng dãy
+- Tính trung bình cộng dãy
+- Tìm giá trị lớn nhất của dãy
+- Tìm giá trị nhỏ nhất của dãy
+- Thống kê số phần tử chẵn của dãy nhỏ hơn x(x nhập từ bàn phím)
+Bài 3. Viết chương trình nhập vào một dãy điểm trên mặt phẳng tọa độ x0y và thực hiện:
+- Tính độ dài đường gấp khúc lần lượt đi qua các điểm 1, 2,..n.
+- Tìm các điểm xa trục hoành nhất.
+- Đếm và in các đoạn cắt trục tung.
+Bài 4: Viết chương trình nhập vào một ma trận thực cấp nxn rồi thực hiện:
+- Tính tổng ma trân.
+- Tìm giá trị lớn nhất của ma trận
+- Tính tích các phần tử của từng cột của ma trận và cho biết những cột nào có tích nhỏ
+nhất.
+- Ma trận trên có phải là ma trận tam giác không.
+Bài 5. Xây dựng hàm:
+
+- Nhập 1 đa thức bâc m
+- In đa thức bậc m
+- Tính giá trị của đa thức tại số thực d
+- Tính tổng 2 đa thức
+
+Ứng dụng các hàm trên vào việc thực hiện nhập vào 2 đa thức Pm, Qn. In lên mà hình đa
+thức vừa nhập P, Q và đa thức tổng R=P+Q. Tìm giá trị của P(x1)+Q(x2); x1, x2 là 2 số thực
+nhập từ bàn phím.
+Bài 6. Viết các:
+
+- Tính tích vô hướng của 2 véc tơ.
+- Tính chuẩn của một véc tơ.
+Ứng dụng các hàm trên vào chương trình kiểm tra một ma trận A có phải là ma trận
+trực giao (ma trận trực giao là ma trận có tích vô hướng của 2 cột hoặc 2 hàng khác
+nhau bằng 0)? Ma trận trực chuẩn? (Ma trận trực chuẩn là ma trận trực giao mà chuẩn
+của của mỗi hàng hay cột bằng 1.
+Bài 7. Viết các hàm thực hiện:
+
+- Nhập danh sách n thí sinh tham gia Olympic tin học sinh viên. Mỗi thí sinh là
+một bản ghi: HT (Họ tên), SD (Số điểm), T (Trường). Giả thiết có m trường
+đại học tham gia.
+- Tính tổng điểm cho trường x.
+- Sắp xếp danh sách thí sinh theo thứ tự giảm dần của điểm số.
+
+Ứng dụng các trên vào việc viết chương trình nhập n thí sinh. In ra danh sách thí sinh theo
+thứ tự giảm dần của điểm số. Thống kê tổng điểm của mỗi trường và cho biết trường nào có
+tổng điểm cao nhất.
+Bài 8. Viết các hàm thực hiện:
+
+- Kiểm tra một xâu s có phải là một chuỗi số.
+- Đếm số từ của xâu
+- Lấy ra n ký tự bên trái của chuỗi s.
+- Lấy ra n ký tự bên phải của chuỗi s.
+- Lấy ra n ký tự bắt đầu từ vị trí thứ m của chuỗi s.
