@@ -1,0 +1,9 @@
+- Tạo một struct Node gồm data kiển int, 2 node previous và next
+- Thêm 1 node vào đầu danh sách liên kết
+- thêm 1 node vào cuối danh sách liên kết
+- thêm 1 node vào vị trí bất kì trong danh sách liên kết
+- xóa một node trong danh sách liên kết: đầu, cuối, giữa
+- sửa một node có giá trị bằng value trong danh sách liên kết
+- in ra danh sách liên kết theo chiều từ node đầu đến node cuối
+- in ra danh sách liên kết theo chiều từ node cuối về node đa thức
+- giải phóng bộ nhớ cho danh sách liên kết đơn
