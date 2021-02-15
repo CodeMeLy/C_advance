@@ -1,4 +1,5 @@
-// TODO: hoàn thiện những nội dung có trong todo
+
+#define MAXSIZE 100
 #include<stdio.h>
 #include<assert.h>
 void swap(int &first, int &second);// hoán vị 2 số
@@ -15,28 +16,76 @@ int main(){
     test_ascSort();
     return 0;
 }
+void enter(int &size){
+    do {
+        printf ("enter size:");
+        scanf ("%d",&size);
+        if (size <= 0||size > MAXSIZE){
+            printf ("enter again size:");
+            scanf ("%d",&size);
+        }
+    }while (size <= 0||size > MAXSIZE);
+}
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm swap
+    int Swap;
+    Swap = first;
+    first = second;
+    second = Swap;
 }
 void enter(int *array, int size){
-    // TODO: hoàn thiện hàm nhập mảng
+    printf ("enter numbers:");
+    for (int i = 0; i < size;i++){
+        printf ("a[%d]=",i);
+        scanf("%d",array[i]);
+    }
 }
 int findMax(int *array, int size){
-    // TODO: hoàn thiện hàm tìm max
-    return 0;
+    int Max = array[0];
+    for (int i = 1;i < size;i++ ){
+        if (Max < array[i])
+        Max = array[i];
+    }
+    return Max;
 }
 bool hasSameValues(int *first, int first_size, int *second, int second_size){
-    // TODO: hoàn thiện hàm kiểm tra 2 mảng first và second có cùng giá trị hay không?
-    return false;
+    // đặt một biến là flag cho hàm trả về bool. đây là kĩ thuật đặt cờ hiệu
+    bool flag = true;//mình khẳng định 2 mảng giống nhau.
+    // đi phản biện trường hợp flag = false
+    // hai mảng giống giá trị
+    // đầu tiên phải cùng size. đúng không?
+    // nếu khác size thì phủ định đúng không? đr
+    if(first_size != second_size){
+        flag = false;
+    } else{
+        // cùng szie thì mình đi từng cặp phần tử xem giống nhau hay không? hieur k
+        // đi từ đầu đến cuối
+        for (int i = 0;i < first_size;i++){
+            for (int j = 0;j < second_size;j++){
+                if (first[i] == second[j]){
+                    flag = true;
+                }
+            }
+        }      
+    }
+    return flag;// trả về nhận định
 }
-void ascSort(int *array, int size){
-    // TODO: hoàn thiện hàm sắp xếp một mảng
+void ascSort(int *array, int size){    
+    int temp = array[0];
+    for (int i = 0;i < size;i++){
+        for (int j = i+1;j < size - 1;j++){
+            if (array[i] > array[j]){
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
 }
 // test 
 void test_findMax(){
     printf("tìm max:");
-    int array[13] = {3,3,4,2,5,6,6,43,7,5,3,6,4};
-    assert(findMax(array,13)==43);
+    int array[5] = {3,3,6,2,5};
+    assert(findMax(array,5)==6);
     printf("chính xác!\n");
 }
 void test_hasSameValues(){

@@ -28,3 +28,7 @@ int main(){
     return 0;
 }
 //TODO: xây dựng các hàm trên
+bool isEgdeOfTriAngle(const float first, const float second, const float third){
+    if(first < second + third && second < first + third && third < first + second)
+
+}

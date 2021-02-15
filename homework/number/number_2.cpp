@@ -12,10 +12,22 @@ int main(){
     return 0;
 }
 void enter(int *first, int *second){
-    //TODO: hoàn thiện hàm enter
+    printf (" \nenter number1: ");
+    scanf("%d",first);
+    printf (" enter number2: ");
+     do {
+        scanf ("%d",second);
+        if (second <= 0){
+            printf ("enter again number2:");
+            scanf ("%d",second);
+        }
+    }while (second <= 0);
 }
 void swap(int *first, int *second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int Swap;
+    Swap = *first;
+    *first = *second;
+    *second = Swap;
 }
 void test_enter(){
     int first = 0, second = 0;

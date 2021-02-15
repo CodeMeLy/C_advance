@@ -12,10 +12,16 @@ int main(){
     return 0;
 }
 void enter(int &first, int &second){
-    // TODO: hoàn thiện hàm nhập 2 số
+    printf("enter number1: ");
+    scanf("%d",&first);
+    printf("enter number2: ");
+    scanf("%d",&second);
 }
 void swap(int &first, int &second){
-    // TODO: hoàn thiện hàm hoán vị 2 số
+    int Swap;
+    Swap = first;
+    first = second;
+    second = Swap;
 }
 // test
 void test_enter(){
