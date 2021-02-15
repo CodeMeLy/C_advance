@@ -24,8 +24,10 @@ float divide(const int first, const int second){
     return (float)first/second;
 }
 int findMax(const int first, const int second){
-    // TODO: hoàn thiện hàm tìm max của 2 số
-    return 0;
+    if(first>second)
+        return first;
+    else    
+        return second;
 }
 // test
 void test_caculator(){
