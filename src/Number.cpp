@@ -4,7 +4,6 @@ int add(const int first, const int second);// cộng 2 số
 int sub(const int first, const int second);// trừ 2 số
 int mul(const int first, const int second);// nhan 2 so
 int div(const int first, const int second);// chia 2 so
-
 void printInputValue(const int first,const int second);// in 2 số truyền vào tham trị
 void printCaculator(const int first, const int second);// in kết quả tính toán
 int main(){
