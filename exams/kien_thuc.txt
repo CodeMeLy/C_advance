@@ -1,0 +1,8 @@
+1. ôn tập căn bản: từ khóa, biến, vòng lặp,cấu trúc điều khiển,...
+2. tìm hiểu về biến: con trỏ, biến thường
+3. tìm hiểu về hàm: định nghĩa hàm, xây dựng hàm, gọi hàm
+4. tìm hiểu về mảng một chiều: mảng động và mảng tĩnh
+5. tìm hiểu về mảng hai chiều: mảng động và mảng tĩnh
+6. tìm hiểu về string: sử dụng được các hàm trong thư viện string.h 
+7. tìm hiểu về struct
+8. tìm hiểu về mảng struct
