@@ -13,8 +13,20 @@ int main(){
     return 0;
 }
 void enter(Fraction &input){
-    // TODO: hoàn thiện hàm nhập một phân số
+    printf("enter numerator: ");
+    scanf("%d",&input.numerator);
+    do{
+        printf("enter denominator:");
+        scanf("%d",&input.denominator);
+            if(input.denominator == 0){
+                printf("review:");
+            }
+        }while(input.denominator == 0);
 }
+    
+
+    
+
 
 void test_enter(){
     Fraction fraction;
