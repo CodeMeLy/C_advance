@@ -11,9 +11,18 @@ void enter(Fraction *input);// nhập phân số
 void test_enter();
 int main(){
     Fraction *fraction;
-    // TODO: viết hàm enter
+    fraction = (Fraction*)malloc(sizeof(Fraction));
+    enter(fraction);
     return 0;
 }
 void enter(Fraction *input){
-    // TODO: hoàn thiện hàm nhập một phân số
+    printf("enter numerator:");
+    scanf("%d", &input -> numerator);
+    do{
+        printf("enter denominator:");
+        scanf("%d", &input -> denominator);
+        if(input -> denominator == 0){
+            printf("review:");
+        }
+    }while(input -> denominator == 0);
 }
