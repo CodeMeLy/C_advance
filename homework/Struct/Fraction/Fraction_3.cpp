@@ -11,7 +11,6 @@ void enter(Fraction *input);// nhập phân số
 void test_enter();
 int main(){
     Fraction *fraction;
-    // TODO: viết hàm enter
     fraction = (Fraction*)malloc(sizeof(Fraction));
     enter(fraction);
     return 0;
