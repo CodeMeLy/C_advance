@@ -1,0 +1,2 @@
+-*tacgia la con tro, sau khi nhap thi gia tri cua tac gia se thay doi
+-đinh nghia ham nhap 
