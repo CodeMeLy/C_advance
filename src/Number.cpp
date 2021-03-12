@@ -1,10 +1,15 @@
 #include<stdio.h>
 int add(int first, int second);
+int sub(int first, int second);
 int main(){
     int first = 4,second = 3;
-    printf("%d + %d = %d",first, second, add(first,second));
+    printf("%d + %d = %d\n",first, second, add(first,second));
+    printf("%d - %d = %d\n",first, second, sub(first,second));
     return 0;
 }
 int add(int first, int second){
     return first + second;
+}
+int sub(int first, int second){
+    return first - second;
 }
