@@ -1,7 +1,7 @@
 #include<stdio.h>
 enum LuaChon{
     COMCHIEN = 1, BOKHO = 2, CHACA = 3
-};// sau enum là đấu ;
+};
 void menu();
 int main(){
     menu();
