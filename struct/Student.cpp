@@ -7,6 +7,7 @@ typedef struct Mark{
 };
 void enter(Mark *mark);// NOTE: nhập điểm
 void print(Mark mark);// NOTE: xuất điểm
+float getGPA(Mark mark);// NOTE: tìm GPA
 int main(){
     Mark *mark;// làm việc với 1 điểm sinh viên
     mark = (Mark*)malloc(sizeof(Mark));// cấp phát vùng nhớ
