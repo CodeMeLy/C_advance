@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+
+    
+    <script>
+        if (!location.href.match(/^(about:|file:)/)) {
+          var bplCookie = document.cookie.match(/(^|;\s*)uu\.app\.bpl=([^;]+)/);
+          var bplSegmentCount = (bplCookie ? Number(bplCookie[2]) : null);
+          if (typeof bplSegmentCount !== "number" || isNaN(bplSegmentCount) || bplSegmentCount < 0) bplSegmentCount = 2;
+          var appBaseUrlPath = (location.pathname.split(/\//).slice(0,1+bplSegmentCount).join("/")+"/").replace(/\/+/g,"/").replace(/"/g,"");
+          var appAssetsRelativeUrlPath = "public/3.1.0/";
+          document.write('<base href="' + appBaseUrlPath + appAssetsRelativeUrlPath + '" data-uu-app-base="' + appBaseUrlPath + '" data-uu-app-assets-base="' + appAssetsRelativeUrlPath + '">');
+        }
+      </script>
+
+    <script>document.write("<script src=\"uu5-environment.js\"><"+"/script>");</script>
+    <script>
+      var cdnBaseUri = ((window.UU5 || {}).Environment || {}).cdnBaseUri || "https://cdn.plus4u.net/";
+      if (cdnBaseUri.charAt(cdnBaseUri.length - 1) !== "/") cdnBaseUri += "/";
+    </script>
+
+    <script>document.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"" + cdnBaseUri + "libs/clearsans/2.0.0/fonts/clear-sans.min.css\">");</script>
+    <script>document.write("<script src=\"" + cdnBaseUri + "libs/systemjs/0.19.47/system.js\"><"+"/script>");</script>
+
+    <title>Unicorn</title>
+    <meta name="description" content="Unicorn je renomovaná evropská společnost poskytující ty největší informační systémy a řešení z oblasti informačních technologií." />
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGLFDHX');</script>
+<!-- End Google Tag Manager -->
+
+
+  <meta name="google-site-verification" content="XFD3fMW4ha56A4ob0lBGJADIwKaGshWoDaDhtH9aSjM" />
+  <meta name="format-detection" content="telephone=no"/>
+
+  <!-- Rich link --> 
+  <meta property="og:title" content="Unicorn"/> 
+  <meta property="og:site_name" content="Unicorn" />
+  <meta property="og:description" content="Unicorn je renomovaná evropská společnost poskytující ty největší informační systémy a řešení z oblasti informačních technologií."/> 
+  <meta property="og:url" content="unicorn.com"/>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image" content="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_ogimage1200x6307" />
+  
+  <!-- Favicon -->
+
+  <meta name="msapplication-TileColor" content="#002882"/>
+  <meta name="msapplication-TileImage" content="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_mstile144x14411"/>
+  <meta name="msapplication-config" content="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_browserconfig13"/>
+  
+  <link rel="apple-touch-icon-precomposed" sizes="512x512" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon512x51211"/>
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon180x18012"/>
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon152x15212"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon144x14412"/>
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon120x12012"/>
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon114x11412"/>
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon76x7612"/>
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon72x7212"/>
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon60x6011"/>
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon57x5712"/>
+  <link rel="apple-touch-icon-precomposed" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_appletouchicon11"/>
+  
+  <link rel="icon" type="image/png" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_favicon16x1611" sizes="16x16"/>
+  <link rel="icon" type="image/png" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_favicon32x3211" sizes="32x32"/>  
+  <link rel="icon" type="image/png" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_favicon96x9611" sizes="96x96"/> 
+  <link rel="icon" type="image/png" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_favicon194x19411" sizes="194x194"/>
+  <link rel="shortcut icon" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_favicon14"/>
+  
+  <link rel="mask-icon" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_safaripinnedtab" color="#002882"/>
+  <link rel="manifest" href="https://uuappg01-eu-w-1.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/binary/getData?slot=prod1&code=small_manifest10" />
+  
+  <script type="application/ld+json">
+
+  {
+    "@context": "https://schema.org",
+
+    "@type": "Organization",
+
+    "name": "Unicorn",
+
+    "legalName": "Unicorn a.s.",
+
+    "url": "https://unicorn.com/",
+
+    "foundingDate": "1990",
+
+    "numberOfEmployees": "2500",
+
+    "slogan": "
+Přinášíme svým zákazníkům konkurenční výhodu a vysokou přidanou hodnotu prostřednictvím špičkových IT řešení, produktů a služeb.",
+
+    "logo": "https://uuapp.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/getBinaryData?code=prod1_small_logo_unicorn_552x60",
+
+    "sameAs": [
+
+      "https://www.facebook.com/CompanyUnicorn/",
+
+      "https://www.linkedin.com/company/unicorn/",
+
+      "https://twitter.com/Unicorn_Systems"
+
+     ],
+
+     "address": {
+
+     "@type": "PostalAddress",
+
+     "addressCountry": "Czech republic",
+
+     "addressRegion": "Prague",
+
+     "addressLocality": "Prague",
+
+     "postalCode": "17000",
+
+     "streetAddress": "Jankovcova 1037/49",
+
+     "email": "info@unicorn.com"
+
+      },
+
+     "founder": {
+
+      "givenName": "Vladimír",
+
+      "familyName": "Kovář"
+
+      },
+
+  "contactPoint": [{
+
+      "@type": "ContactPoint",
+
+      "telephone": "+420 221 400 111",
+
+      "contactType": "customer service",
+
+      "email": "info@unicorn.com",
+
+      "hoursAvailable": "Mo,Tu,We,Th,Fr 08:00-20:00"
+
+    }]
+
+  }
+  </script>
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Unicorn">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="application-name" content="Unicorn">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:url" content="https://uuapp.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb"/>
+    <meta name="twitter:title" content="Unicorn"/>
+    <meta name="twitter:description" content="Unicorn je renomovaná evropská společnost poskytující ty největší informační systémy a řešení z oblasti informačních technologií."/>
+    <meta name="twitter:image" content="https://uuapp.plus4u.net/uu-webkit-maing02/d2a80094d8d24287befb333201f98edb/getProductLogo?type=16x9&slot=prod1"/>
+
+
+    <script>
+      var systemJsMeta = {};
+      systemJsMeta[cdnBaseUri + "libs/*"] = {"format":""};
+      systemJsMeta[cdnBaseUri + "*"] = {"format":"amd"};
+      window.SystemJS && SystemJS.config({
+        "paths": {
+          "create-react-class": cdnBaseUri + "libs/create-react-class/15.6.3/create-react-class.min.js",
+          "immutable": cdnBaseUri + "libs/immutable/3.8.2/immutable.min.js",
+          "prop-types": cdnBaseUri + "libs/prop-types/15.7.2/prop-types.min.js",
+          "react": cdnBaseUri + "libs/react/16.13.1/react.min.js",
+          "react-dnd": cdnBaseUri + "libs/react-dnd/7.0.2/ReactDnD.min.js",
+          "react-dnd-html5-backend": cdnBaseUri + "libs/react-dnd-html5-backend/7.0.2/ReactDnDHTML5Backend.min.js",
+          "react-dnd-touch-backend": cdnBaseUri + "libs/react-dnd-touch-backend/0.7.1/Touch.browserified.js",
+          "react-dom": cdnBaseUri + "libs/react-dom/16.13.1/react-dom.min.js",
+          "uu5_webkitg02": cdnBaseUri + "uu5-webkitg02/3.0.0/uu5_webkitg02.min.js",
+          "uu5codekitg01": cdnBaseUri + "uu-uu5codekitg01/1.0.0/uu5codekitg01.min.js",
+          "uu5codekitg01-markdown": cdnBaseUri + "uu-uu5codekitg01/1.0.0/uu5codekitg01-markdown.min.js",
+          "uu5g04": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04.min.js",
+          "uu5g04-block-layout": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04-block-layout.min.js",
+          "uu5g04-bricks": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04-bricks.min.js",
+          "uu5g04-bricks-editable": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04-bricks-editable.min.js",
+          "uu5g04-forms": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04-forms.min.js",
+          "uu5g04-hooks": cdnBaseUri + "uu-uu5g04/1.0.0/uu5g04-hooks.min.js",
+          "uu5imagingg01": cdnBaseUri + "uu-uu5imagingg01/1.0.0/uu5imagingg01.min.js",
+          "uu5richtextg01": cdnBaseUri + "uu-uu5richtextg01/1.0.0/uu5richtextg01.min.js",
+          "uu5tilesg01": cdnBaseUri + "uu-uu5tilesg01/3.0.0/uu5tilesg01.min.js",
+          "uu5treeg01": cdnBaseUri + "uu-uu5treeg01/3.0.0/uu5treeg01.min.js",
+          "uu_appg01": cdnBaseUri + "uu-appg01/5.0.0/uu_appg01.min.js",
+          "uu_appg01_core": cdnBaseUri + "uu-appg01-core/5.0.0/uu_appg01_core.min.js",
+          "uu_appg01_oidc": cdnBaseUri + "uu-appg01-oidc/3.0.0/uu_appg01_oidc.min.js",
+          "uu_contentkitg01": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01.min.js",
+          "uu_contentkitg01-diagrams": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-diagrams.min.js",
+          "uu_contentkitg01-grids": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-grids.min.js",
+          "uu_contentkitg01-images": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-images.min.js",
+          "uu_contentkitg01-layout": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-layout.min.js",
+          "uu_contentkitg01-links": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-links.min.js",
+          "uu_contentkitg01-multimedia": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-multimedia.min.js",
+          "uu_contentkitg01-separators": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-separators.min.js",
+          "uu_contentkitg01-tables": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-tables.min.js",
+          "uu_contentkitg01-tables-editable": cdnBaseUri + "uu-contentkitg01/2.0.0/uu_contentkitg01-tables-editable.min.js",
+          "uu_dynamiccomponentcontentg02": cdnBaseUri + "uu-dynamiccomponentcontentg02/3.0.0/uu_dynamiccomponentcontentg02.min.js",
+          "uu_flsg01": cdnBaseUri + "uu-flsg01/1.0.0/uu_flsg01.min.js",
+          "uu_oidcg01": cdnBaseUri + "uu-appg01-oidc/3.0.0/uu_appg01_oidc.min.js",
+          "uu_pg01": cdnBaseUri + "uu-pg01/3.0.0/uu_pg01.min.js",
+          "uu_pg01-bricks": cdnBaseUri + "uu-pg01/3.0.0/uu_pg01-bricks.min.js",
+          "uu_pg01-forms": cdnBaseUri + "uu-pg01/3.0.0/uu_pg01-forms.min.js",
+          "uu_pg01-tiles": cdnBaseUri + "uu-pg01/3.0.0/uu_pg01-tiles.min.js",
+          "uu_plus4u5filesg01": cdnBaseUri + "uu-plus4u5filesg01/4.0.0/uu_plus4u5filesg01.min.js",
+          "uu_plus4u5g01": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01.min.js",
+          "uu_plus4u5g01-app": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01-app.min.js",
+          "uu_plus4u5g01-bricks": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01-bricks.min.js",
+          "uu_plus4u5g01-context": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01-context.min.js",
+          "uu_plus4u5g01-hooks": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01-hooks.min.js",
+          "uu_plus4u5g01-uubmldraw": cdnBaseUri + "uu-plus4u5g01/4.0.0/uu_plus4u5g01-uubmldraw.min.js",
+          "uu_productcatalogueg01": cdnBaseUri + "uu-productcatalogueg01/1.0.0/uu_productcatalogueg01.min.js",
+          "uu_territoryg01": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01.min.js",
+          "uu_territoryg01-accessroleifc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-accessroleifc.min.js",
+          "uu_territoryg01-activity": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-activity.min.js",
+          "uu_territoryg01-ai": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-ai.min.js",
+          "uu_territoryg01-artifact": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-artifact.min.js",
+          "uu_territoryg01-artifactifc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-artifactifc.min.js",
+          "uu_territoryg01-awsc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-awsc.min.js",
+          "uu_territoryg01-bricks": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-bricks.min.js",
+          "uu_territoryg01-ee": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-ee.min.js",
+          "uu_territoryg01-folder": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-folder.min.js",
+          "uu_territoryg01-forms": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-forms.min.js",
+          "uu_territoryg01-groupifc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-groupifc.min.js",
+          "uu_territoryg01-metamodel": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-metamodel.min.js",
+          "uu_territoryg01-obc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-obc.min.js",
+          "uu_territoryg01-person": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-person.min.js",
+          "uu_territoryg01-rolegroupifc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-rolegroupifc.min.js",
+          "uu_territoryg01-roleifc": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-roleifc.min.js",
+          "uu_territoryg01-territorygroup": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-territorygroup.min.js",
+          "uu_territoryg01-thing": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-thing.min.js",
+          "uu_territoryg01-unit": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-unit.min.js",
+          "uu_territoryg01-unitgroup": cdnBaseUri + "uu-territoryg01/1.0.0/uu_territoryg01-unitgroup.min.js",
+          "systemjs": cdnBaseUri + "libs/systemjs/0.19.47/system.js"
+        },
+        "meta": systemJsMeta
+      });
+    </script>
+
+    <style>/*------------TOP MENU-------------------*/
+
+/*CS MENU*/
+.uu-webkit-top-menu-login-button{
+    position: absolute !important;
+    right: 0;
+    margin-right: 146px;
+    background: transparent !important;
+    color: rgb(0, 40, 130) !important;
+    text-transform: uppercase;
+    z-index:10; 
+    top: 16px;
+    padding:0 12px !important;
+}
+
+.uu-webkit-top-menu-login-button:hover{
+  color: #2196f3 !important;
+  font-weight: 700;
+}
+
+@media screen and (min-width:768px){
+  .uni-top-menu-margin-right .uu5-webkit-basic-top-navigation-content-horizontal-navigation{
+    margin-right: 112px;
+  }
+}
+/*-----*/
+
+/*EN MENU*/
+.uu-webkit-top-menu-login-button-en{
+    position: absolute !important;
+    right: 0;
+    margin-right: 146px;
+    background: transparent !important;
+    color: rgb(0, 40, 130) !important;
+    text-transform: uppercase;
+    z-index:10; 
+    top: 16px;
+    padding:0 12px !important;
+}
+
+.uu-webkit-top-menu-login-button-en:hover{
+  color: #2196f3 !important;
+  font-weight: 700;
+}
+
+@media screen and (min-width:768px){
+  .uni-top-menu-margin-right-en .uu5-webkit-basic-top-navigation-content-horizontal-navigation{
+    margin-right: 69px;
+  }
+}
+/*---*/
+
+/*GENERAL MENU*/
+.uu-webkit-uni-top-menu-color .uu5-bricks-button-m{
+  padding:0 12px;
+}
+
+.uu-webkit-uni-top-menu-color .uu5-bricks-button{
+  color: rgb(0, 40, 130) !important;
+}
+
+.uu-webkit-uni-top-menu-color .uu5-bricks-button:hover{
+  color: #2196f3 !important;
+}
+
+
+.uu-webkit-uni-left-menu-original .plus4u5-app-menu-link{
+  color: rgb(0, 40, 130) !important;
+}
+
+.uu-webkit-left-menu-login-button{
+  margin-left: 40px;
+    background: transparent !important;
+    color: rgb(0, 40, 130) !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:15px !important;
+  
+}
+
+.uu-webkit-left-menu-login-button:hover{
+  color: #2196f3 !important;
+  
+}
+
+/*------------------UIS INTRO--------------------*/
+/*----------UIS INTRO----------*/
+@media only screen and (min-width: 769px) {
+    .uni-web-intro-left-padding {
+      margin-left: 8px;
+    }
+    .uni-web-intro-right-padding {
+      margin-right: 8px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .uni-web-intro-content-alignment{
+      justify-content:center;
+    }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 1135px){
+    .uni-web-intro-content-alignment{
+      align-items:center;
+    }
+  }
+
+
+/*--------------------CAROUSEL------------------------*/
+@media screen and (min-width:338px) and (max-width:768px){
+  .uu-webkit-uni-carousel .uu5-bricks-carousel{
+    height:600px !important;
+  }
+}
+
+@media screen and (max-width:344px){
+  .uu-webkit-uni-carousel .uu5-bricks-carousel{
+    height:620px !important;
+  }
+}
+
+@media screen and (min-width:481px) and (max-width:768px){
+  .uu-webkit-uni-carousel .uu5-bricks-carousel-left, .uu5-bricks-carousel-right{
+    top: calc(12% - -8px) !important;
+  }
+}
+
+@media screen and (max-width:480px){
+  .uu-webkit-uni-carousel .uu5-bricks-carousel-left, .uu5-bricks-carousel-right{
+    top: calc(11% - -7px) !important;
+  }
+}
+
+@media screen and (max-width:768px){
+  .uu-webkit-uni-carousel .uu5-bricks-carousel-controls .uu5-bricks-carousel-indicators {
+      bottom: 7px !important; 
+  }
+  
+  .uu-webkit-uni-carousel .uu5-webkit-background-image{
+    height: 220px !important;
+  }
+  
+  .uu-webkit-uni-carousel .uu-webkit-bnmd14{
+    height:100%;
+  }
+  
+  .uu-webkit-uni-carousel .uu5-bricks-carousel-item .uu-webkit-9up59w {
+    height:100%;
+  }
+
+  .uu-webkit-uni-carousel .uu5-bricks-carousel-item .uu-webkit-9hotka {
+    height:100%;
+  }
+}
+/*-------------------------------------------------*/
+
+/*----------INFO TILES----------*/
+
+@media screen and (min-width: 993px){
+  .uu-webkit-uni-container-tiles-helper .uu-webkit-uni-info-tiles-homepage.uu5-bricks-row.uu5-bricks-row-flex{
+    flex-wrap: unset;
+    justify-content: space-between;
+  }
+  .uu-webkit-uni-info-tiles-homepage{
+    flex-flow:row nowrap;
+    
+  }
+  
+  .uu-webkit-uni-info-tiles-homepage  .uu5-webkit-info-tile:first-child {
+    margin-left:0;
+  }
+  
+  .uu-webkit-uni-info-tiles-homepage  .uu5-webkit-info-tile:last-child {
+    margin-right:0;
+  }
+}
+
+@media screen and (min-width: 895px) and (max-width: 992px){
+  .uu-webkit-uni-info-tiles-homepage .uu5-webkit-info-tile:first-child{
+    width: 48.5%;
+    margin-left: 0;
+    margin-right: 12px;
+  }
+  
+  .uu-webkit-uni-info-tiles-homepage .uu5-webkit-info-tile:not(:first-child):not(:last-child){
+    width: 48.5%;
+    margin-right: 0;
+    margin-left: 12px;
+  }
+  
+  .uu-webkit-uni-info-tiles-homepage .uu5-webkit-info-tile:last-child{
+    width: 48.5%;
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 894px) {
+  .uu-webkit-uni-info-tiles-homepage  .uu5-webkit-info-tile {
+      width: 798px;
+      padding: 32px;
+  }
+}
+@media screen and (max-width: 894px){
+  .uu-webkit-uni-info-tiles-homepage  .uu5-webkit-info-tile {
+      height: auto;
+      margin: 0 0px 16px;
+  }
+
+  .uu-webkit-uni-container-tiles-helper .uu-webkit-uni-info-tiles-homepage .uu5-webkit-info-tile-image {
+    height: 100px;
+    min-height: 100px;
+  }
+}
+
+/*------------------------------*/
+
+.uu-webkit-usy-image-border-radius .uu5-webkit-image-panel-image{
+  border-radius:5px;
+}
+
+.uu-webkit-uni-news-tiles-helper .uu-webkit-uni-news-tiles{
+  background-color:#dfe2e6;
+  padding-bottom:13px;
+}
+
+.uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell{
+    margin:0;
+}
+
+.uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell{
+    max-width:566px;
+    margin:0;
+  }
+
+  .uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell .uu5-webkit-news-tile{
+    max-width:558px;
+  }
+  
+@media screen and (max-width:769px){
+  .uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell {
+    max-width:unset;
+  }
+  
+  .uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell .uu5-webkit-news-tile{
+    max-width:unset;
+  }
+}
+
+@media screen and (min-width:769px){
+  .uu-webkit-uni-news-tiles .uu5-webkit-news-tile-list-cell:last-child{
+      margin-left: 27px;
+  }
+}
+
+.uu-webkit-usy-is-link .uu-webkit-usy-is-well{
+  color:#002882;
+}
+
+ .uu-webkit-usy-is-well:hover{
+  color:#4562A4;
+}
+
+@media screen and (min-width:993px) and (max-width:1081px){
+  .uu-webkit-usy-is-link .uu-webkit-usy-is-well.uu-webkit-usy-is-well-energy-and-utilities{
+    padding-bottom:0; 
+  }
+}
+
+/*HOMEPAGE TILES*/
+.homepage-panels {
+  max-width:1152px;
+  margin:auto;
+}
+
+.homepage-panels .uu-webkit-unicorn-tiles-columns{
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+
+.uu-webkit-unicorn-image-zoom{
+  transition: transform .5s ease;
+}
+
+.uu-webkit-unicorn-image-zoom:hover{
+  transform: scale(1.05);
+}
+
+.uu-webkit-unicorn-bg-zoom:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  box-shadow: transparent 0px 0px 0px 0px;
+  background-color: rgba(223, 226, 230, 1);
+  transition: all 0.6s ease-in-out 0s;
+  border-radius: 8px;
+}
+.uu-webkit-unicorn-bg-zoom:hover:after{
+  transform: scale(1.04, 1.04);
+}
+.uu-webkit-unicorn-bg-zoom:hover:after{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 22px 4px, rgba(0, 0, 0, 0.3) 0px 16px 12px -16px;
+  transform: scale(1.04, 1.04);
+}
+
+
+@media screen and (min-width:993px) and (max-width:1187px){
+
+  .uu-webkit-uni-tiles-selector-helper .uu-webkit-uni-tiles-word-break{
+    word-break: break-all;
+    line-height:1.14;
+  }
+}
+
+/*-----------------------------*/
+
+.uu-webkit-arrow-up::before{
+    border: 12px solid transparent;
+    border-bottom-color: rgb(223, 226, 230);
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    margin-top: -63px;
+}
+
+/*-----------CONTACTS-----------*/
+
+.uu-webkit-uni-contact-card{
+  display: flex;
+  height: 100%;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+/*------------------------------*/
+
+/*----------------SWE PORTAL----------------*/
+
+.unicorn-swe-portal-touch-icon .uu5-bricks-touch-icon-body{
+  width:60px;
+  height:60px;
+  
+}
+
+.unicorn-swe-portal-touch-icon .uu5-bricks-touch-icon-label{
+  font-size:15px;
+  font-weight:500;
+}
+
+/*------------------------------------------*/
+
+/*----------------PANEL BG------------------*/
+
+.uni-panel-background-color .uu5-bricks-panel-header{
+  background-color:#dfe2e6 !important;
+}
+
+/*------------------------------------------*/
+
+/*--------------WEB CARDS-------------------*/
+
+  .wov-uni-product-row-selector-helper .wov-uni-product-column-width .wov-uni-product-image-width{
+    width:216px;
+  }
+ .wov-uni-product-row-selector-helper  .wov-uni-product-column-width{
+    width: 264px;
+    padding: 24px;
+    position: relative;
+  }
+  
+  @media screen and (max-width:480px){
+    .wov-uni-product-row-selector-helper .wov-uni-product-column-width .wov-uni-product-image-width{
+      width:100%;
+    }
+    .wov-uni-product-row-selector-helper .wov-uni-product-column-width{
+    width:100% !important;
+    }
+  }
+
+/*------------------------------------------*/
+
+/*--------------SWE PRODUCT CARD-----------------*/
+
+.uu-webkit-uni-contact-card .unicorn-product-card-selector-helper-button .plus4u5-bricks-button.unicorn-product-card-button{
+  color: #fff;
+  background: #71ac2c;
+  box-shadow: -1px 2px 4px 0 rgba(0,0,0,.18);
+  min-width: 74px;
+  font-family: ClearSans-Medium;
+  font-size: 14px;
+}
+
+.uu-webkit-uni-contact-card .unicorn-product-card-selector-helper-button .plus4u5-bricks-button.unicorn-product-card-button:hover{
+  color: #fff;
+  background-color: #649827 ;
+}
+
+.uu-webkit-uni-contact-card .unicorn-product-card-selector-helper-button .plus4u5-bricks-button.unicorn-product-card-button:focus{
+  color: #fff;
+  background-color: #568322;
+}
+
+/*-----------------------------------------------*/
+
+/*BOTTOM*/
+
+@media screen and (min-width:993px){
+  .uu-webkit-unicorn-bottom-row > .uu-webkit-unicorn-bottom-column-2{
+     padding-left: 65px;
+  }
+  
+  .uu-webkit-unicorn-bottom-row > .uu-webkit-unicorn-bottom-column-3{
+     padding-left: 32.5px;
+  }
+}</style>
+
+    <script>window.uuWebKit = {
+      websiteName: "Unicorn"
+    }
+    </script>
+
+    <style>
+      .uu-webkit-initial-loading {
+        background-color: #002782; 
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+      .uu-webkit-initial-loading-spinner {
+        position: relative;
+        width: 226px;
+        height: 226px;
+      }
+
+      .uu-webkit-initial-loading-outer-spinner {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top-color: #ffffff;
+        border-left-color: #ffffff;
+        opacity: 0.24;
+
+        animation: spin-revert 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      .uu-webkit-initial-loading-inner-spinner:before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top-color: #ffffff;
+        border-left-color: #ffffff;
+        opacity: 0.64;
+
+        animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      .uu-webkit-initial-loading-inner-spinner:after {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        right: 60px;
+        bottom: 60px;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top-color: #ffffff;
+        border-left-color: #ffffff;
+        opacity: 0.84;
+
+        animation: spin 1.2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+
+      @keyframes spin-revert {
+        0% {
+          transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+          transform: rotate(-360deg); /* Firefox 16+, IE 10+, Opera */
+        }
+      }
+
+      .uu-webkit-initial-loading-content {
+        color: #ffffff;
+        font-size: 32px;
+        margin-top: 56px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+  <div id="uuWebKit">
+    <div class="uu5-bricks-div uu5-bricks-loading uu5-common-padding-5 uu-webkit-initial-loading clear-sans">
+      <div class="uu5-bricks-div uu-webkit-initial-loading-spinner">
+        <div class="uu5-bricks-div uu-webkit-initial-loading-outer-spinner"></div>
+        <div class="uu5-bricks-div uu-webkit-initial-loading-inner-spinner"></div>
+      </div>
+      <div class="uu5-bricks-div uu-webkit-initial-loading-content">Unicorn</div>
+    </div>
+  </div>
+    <script>
+      SystemJS.import("uu_appg01_core")
+      SystemJS.import("uu_appg01_oidc");
+
+      SystemJS.import("./userGate.js").then(function (Index) {
+        Index.render("uuWebKit");
+      });
+    </script>
+  </body>
+</html>
