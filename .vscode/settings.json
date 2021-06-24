@@ -66,12 +66,6 @@
         "compare": "cpp",
         "*.tcc": "cpp",
         "unordered_set": "cpp",
-        "string_view": "cpp",
-        "thread": "cpp",
-        "clocale": "cpp",
-        "cstdarg": "cpp",
-        "cwctype": "cpp",
-        "memory_resource": "cpp",
-        "optional": "cpp"
+        "string_view": "cpp"
     }
 }
